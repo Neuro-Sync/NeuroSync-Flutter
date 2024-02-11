@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, avoid_print, prefer_const_constructors, library_private_types_in_public_api
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/components/app_button.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_colors.dart';
 import 'package:neurosync/core/utils/utilities.dart';
 import 'package:neurosync/features/preparing/screens/test_AI_model/widgtes/enter_num_item.dart';
-import 'package:sizer/sizer.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tfl;
 
 import 'package:flutter/material.dart';

@@ -16,10 +16,10 @@ showToast(String text, BuildContext context, bool success) {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
-          color: success ? AppColors.green : AppColors.red),
+          color: success ?Colors.green : Colors.red),
       child: AppText(
         text.toString(),
-        color: AppColors.white,
+        color: Colors.white,
         // fontFamily: FontConstants.bigShouldersDisplayBold,
         textAlign: TextAlign.center,
       ),

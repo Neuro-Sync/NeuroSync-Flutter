@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_colors.dart';
 
@@ -11,7 +11,7 @@ class SquareCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         margin: EdgeInsets.symmetric(horizontal: 3.5.w),
-        color: color ?? AppColors.white.withOpacity(0.1),
+        color: color ?? Colors.white.withOpacity(0.1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),

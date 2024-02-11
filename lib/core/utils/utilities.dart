@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/constants/constants.dart';
 import 'package:neurosync/core/resources/app_colors.dart';
 import 'package:neurosync/core/resources/app_font_family.dart';
-import 'package:sizer/sizer.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -156,8 +156,8 @@ class AppUtil {
     final snackBar = SnackBar(
       content: AppText(
         content,
-        fontFamily: FontConstants.dinnextltw23medium,
-        color: AppColors.white,
+        fontFamily: FontConstants.loraRegularFont,
+        color: Colors.white,
       ),
       duration: const Duration(seconds: 2),
       backgroundColor: bgcolor,

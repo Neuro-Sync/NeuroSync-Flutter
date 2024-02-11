@@ -3,8 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_font_family.dart';
-
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:intl/intl.dart' as intl;
 import 'package:easy_localization/src/public_ext.dart';
@@ -95,7 +94,7 @@ class _CustomTextFaildState extends State<CustomTextFaild> {
             color: widget.Background ?? Colors.transparent,
             borderRadius: BorderRadius.circular(widget.borderRadius ?? 6),
             border: Border.all(
-              color: widget.borderColor ?? AppColors.white,
+              color: widget.borderColor ?? Colors.grey,
               width: widget.borderWidth ?? .5,
             )),
         child: Center(
@@ -134,12 +133,11 @@ class _CustomTextFaildState extends State<CustomTextFaild> {
                   });
                 },
             style: TextStyle(
-                fontFamily: FontConstants.dinnextltw23medium,
                 fontSize: widget.hintsize ?? 12,
                 color: Colors.black),
             decoration: InputDecoration(
                 errorStyle: TextStyle(
-                    fontFamily: FontConstants.dinnextltw23medium,
+                    fontFamily: FontConstants.loraMediumFont,
                     fontSize: 12,
                     color: Colors.red[900]),
                 contentPadding: EdgeInsets.all(widget.contentPadding ?? 10),
@@ -152,7 +150,7 @@ class _CustomTextFaildState extends State<CustomTextFaild> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide(
-                      color: AppColors.black, width: widget.borderWidth ?? .5),
+                      color: Colors.black, width: widget.borderWidth ?? .5),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
@@ -162,13 +160,13 @@ class _CustomTextFaildState extends State<CustomTextFaild> {
                 filled: true,
                 hintStyle: TextStyle(
                   color: Colors.grey[400],
-                  fontFamily: FontConstants.helveticaneuew23forskyrg,
+                  fontFamily: FontConstants.loraRegularFont,
                   fontSize: widget.hintsize ?? 10,
                 ),
                 hintText: widget.hintTxt ?? "",
                 label: AppText(
                   widget.labelTxt ?? "",
-                  fontFamily: FontConstants.helveticaneuew23forskyrg,
+                  fontFamily: FontConstants.loraRegularFont,
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
                   color: widget.labelColor ?? AppColors.primarycolor,

@@ -49,6 +49,10 @@ class PrefService {
   bool get isLogin => _preferences?.getBool('isLogin') ?? false;
   set isLogin(bool value) => _preferences?.setBool('isLogin', value);
 
+
+
+
+
   String get userLocal => _preferences?.getString('userLocal') ?? 'ar';
   set userLocal(String value) => _preferences?.setString('userLocal', value);
 

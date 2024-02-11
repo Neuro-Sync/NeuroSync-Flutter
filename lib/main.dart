@@ -23,7 +23,7 @@ Future<void> main() async {
         Locale('ar'),
       ],
       path: 'assets/translations',
-      startLocale: const Locale('ar'),
+      startLocale: const Locale('en'),
       saveLocale: true,
       useOnlyLangCode: true,
       // assetLoader: const CodegenLoader(),

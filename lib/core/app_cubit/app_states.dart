@@ -3,20 +3,16 @@
 part of 'app_cubit.dart';
 
 abstract class AppState {
-  final String lang;
-  final bool changed;
-  const AppState({required this.lang, required this.changed});
+  const AppState();
 }
 
 class AppInitial extends AppState {
-  const AppInitial() : super(lang: "ar", changed: false);
-  @override
-  List<dynamic> get props => [lang, changed];
+  const AppInitial();
 }
 
-class AppData extends AppState {
-  const AppData({required String lang, required bool changed})
-      : super(lang: lang, changed: changed);
-  @override
-  List<dynamic> get props => [lang, changed];
-}
+// ignore: camel_case_types
+class changestate extends AppState {}
+
+class ChangeCurrentChild extends AppState {}
+
+class ChangeCurrentRegisterScreen extends AppState {}

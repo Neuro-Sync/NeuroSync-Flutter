@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_colors.dart';
 import '../resources/app_size.dart';
@@ -46,7 +46,7 @@ final BoxBorder? border;
             width: borderwidth ?? 0.2.h,
           ),
           borderRadius: BorderRadius.circular(radius ?? 30),
-          color: color ?? AppColors.buttoncolor,
+          color: color ?? AppColors.primarycolor,
         ),
         width: width ?? AppSize.getwidth(context),
         height: height ?? 6.h,
@@ -57,7 +57,7 @@ final BoxBorder? border;
                     title!,
                     fontSize: fontSize ?? 12.sp,
                     fontWeight: fontWeight,
-                    color: titleColor ?? AppColors.white,
+                    color: titleColor ??Colors.white,
                     fontFamily: fontFamily,
                   )),
       ),

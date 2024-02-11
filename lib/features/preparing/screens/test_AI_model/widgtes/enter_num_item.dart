@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EnterNumItem extends StatefulWidget {
   const EnterNumItem(
