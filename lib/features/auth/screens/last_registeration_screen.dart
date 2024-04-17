@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/components/app_button.dart';
 import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:neurosync/core/resources/app_size.dart';
+import '../../../core/theming/app_colors.dart';
+import '../../../core/theming/app_font_family.dart';
+import '../../preparing/screens/demo/screens/entertainment_screen.dart';
 
 class RegisterationCongratulationsScreen extends StatelessWidget {
   const RegisterationCongratulationsScreen({super.key});
@@ -45,7 +47,16 @@ class RegisterationCongratulationsScreen extends StatelessWidget {
             radius: 10.sp,
             fontFamily: FontConstants.lorasemiBoldFont,
             fontSize: FontSizes.small,
-            onTap: () {},
+            onTap: () {
+                    Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) =>
+                                const EnterTainmentScreen(),
+                          ),
+                        );
+              
+            },
           ),
         ],
       ),

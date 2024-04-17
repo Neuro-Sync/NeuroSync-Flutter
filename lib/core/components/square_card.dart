@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../resources/app_colors.dart';
 
 class SquareCard extends StatelessWidget {
   const SquareCard({super.key, required this.cardChild, this.color});

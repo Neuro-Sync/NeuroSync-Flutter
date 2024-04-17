@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_assets.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/resources/app_texts.dart';
+
+import '../../../core/theming/app_colors.dart';
+import '../../../core/theming/app_font_family.dart';
 
 class OnBoardingFirstScreen extends StatelessWidget {
   const OnBoardingFirstScreen({super.key});

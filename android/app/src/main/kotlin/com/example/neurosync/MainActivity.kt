@@ -1,4 +1,4 @@
-package com.example.neurosync
+package com.samy.neurosync
 
 import io.flutter.embedding.android.FlutterActivity
 

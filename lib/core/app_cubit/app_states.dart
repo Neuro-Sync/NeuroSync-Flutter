@@ -2,17 +2,47 @@
 
 part of 'app_cubit.dart';
 
-abstract class AppState {
-  const AppState();
+enum ChangeCurrentRegisterScreen {
+  initial,
+  success,
 }
 
-class AppInitial extends AppState {
-  const AppInitial();
+enum ChangeCurrentChild {
+  initial,
+  success,
 }
 
-// ignore: camel_case_types
-class changestate extends AppState {}
+enum Changestate {
+  initial,
+  success,
+}
 
-class ChangeCurrentChild extends AppState {}
+class AppState {
+  final ChangeCurrentRegisterScreen changeCurrentRegisterScreen;
+  final ChangeCurrentChild changeCurrentChild;
+  final Changestate changestate;
+  bool? isClicked;
 
-class ChangeCurrentRegisterScreen extends AppState {}
+  AppState({
+    this.changeCurrentRegisterScreen = ChangeCurrentRegisterScreen.initial,
+    this.changeCurrentChild = ChangeCurrentChild.initial,
+    this.changestate = Changestate.initial,
+    this.isClicked,
+  });
+
+  AppState copyWith({
+    ChangeCurrentRegisterScreen? changeCurrentRegisterScreen,
+    ChangeCurrentChild? changeCurrentChild,
+    Changestate? changestate,
+    bool? isClicked,
+    int? stepsCountIncontrller = -1,
+  }) {
+    return AppState(
+        changeCurrentChild: changeCurrentChild ?? this.changeCurrentChild,
+        changeCurrentRegisterScreen:
+            changeCurrentRegisterScreen ?? this.changeCurrentRegisterScreen,
+        changestate: changestate ?? this.changestate,
+        isClicked: isClicked ?? this.isClicked ?? false,
+    );
+  }
+}

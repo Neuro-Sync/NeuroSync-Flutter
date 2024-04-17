@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/resources/app_texts.dart';
+
+import '../../../core/theming/app_colors.dart';
+import '../../../core/theming/app_font_family.dart';
 
 class OnBoardingThirdScreen extends StatelessWidget {
   const OnBoardingThirdScreen({super.key});
@@ -16,11 +17,6 @@ class OnBoardingThirdScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Image.asset(
-          //   AppAssets.onboarding_3_IC,
-          //   width: 101,
-          //   height: 207,
-          // ),
           Gap(90.h),
           AppText(
             AppTexts.on_boarding_3_body,

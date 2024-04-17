@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../resources/app_colors.dart';
-import '../utils/locator_utils.dart';
+
 
 class AppText extends StatelessWidget {
   final String text;
@@ -46,9 +45,9 @@ class AppText extends StatelessWidget {
       overflow: textOverflow,
       maxLines: maxLines,
       textAlign: textAlign,
-      textDirection: LocatorUtils().pref().userLocal == "en"
-          ? TextDirection.ltr
-          : TextDirection.rtl,
+      // textDirection: LocatorUtils().pref().userLocal == "en"
+      //     ? TextDirection.ltr
+      //     : TextDirection.rtl,
     );
   }
 }

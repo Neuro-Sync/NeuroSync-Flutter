@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../resources/app_colors.dart';
-import '../resources/app_font_family.dart';
 import 'app_text.dart';
 
 showToast(String text, BuildContext context, bool success) {

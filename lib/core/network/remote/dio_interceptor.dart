@@ -9,11 +9,11 @@ class DioInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers
       //X-Authorization
-      ..["X-Authorization"] =
-          'Bearer ${LocatorUtils().pref().userToken}'
+      // ..["X-Authorization"] =
+      //     'Bearer ${LocatorUtils().pref().userToken}'
       ..["Accept"] = "application/json"
-      ..["Content-Type"] = "application/json"
-      ..["X-localization"] = LocatorUtils().pref().userLocal;
+      ..["Content-Type"] = "application/json";
+      // ..["X-localization"] = LocatorUtils().pref().userLocal;
     super.onRequest(options, handler);
   }
 

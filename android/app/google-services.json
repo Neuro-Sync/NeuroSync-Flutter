@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "971361389695",
+    "project_id": "ahhmed-adel",
+    "storage_bucket": "ahhmed-adel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971361389695:android:419292b6d8003aa9ff034a",
+        "android_client_info": {
+          "package_name": "com.samy.neurosync"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971361389695-dkddmg5ss1fj8g6dbpp5gcg0buqaughc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1ZtlE9a66rEVg52sOxo11Fw-qeiCYLxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971361389695-dkddmg5ss1fj8g6dbpp5gcg0buqaughc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "971361389695-6s6c14c48fmjltvk877oitbfb5eb1aun.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ahmedAdelPro"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

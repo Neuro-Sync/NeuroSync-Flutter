@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:neurosync/core/resources/app_size.dart';
+import 'app_colors.dart';
+import 'app_font_family.dart';
 
 class CustomTheme {
   static ThemeData themeData = ThemeData(
@@ -9,7 +9,7 @@ class CustomTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: AppColors.primarycolor,
     primaryColorLight: AppColors.primarycolor,
-    primaryColorDark: AppColors.primarycolor,
+    primaryColorDark: Colors.white,
     scaffoldBackgroundColor: AppColors.primarycolor,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: TextButton.styleFrom(

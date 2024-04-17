@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
 import 'package:neurosync/core/resources/app_size.dart';
+
+import '../../../core/theming/app_colors.dart';
 
 class RegisterationTextFormField extends StatelessWidget {
   const RegisterationTextFormField(
@@ -71,7 +72,7 @@ class RegisterationTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 55.h,
-      width: 327.w,
+      width: AppSize.getwidth(context)*0.9,
       child: TextFormField(
           cursorColor: Colors.white,
           keyboardType: type,

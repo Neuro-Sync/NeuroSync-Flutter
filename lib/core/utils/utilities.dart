@@ -8,10 +8,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/constants/constants.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 
 import 'package:url_launcher/url_launcher.dart';
+
+import '../theming/app_colors.dart';
+import '../theming/app_font_family.dart';
 
 Color chooseToastColor(ToastStates state) {
   Color color;
@@ -38,6 +39,7 @@ enum ToastStates {
 class AppUtil {
   static GlobalKey<NavigatorState>? navigatorKey;
 
+  
   static appAlert(
     context, {
     String? title,

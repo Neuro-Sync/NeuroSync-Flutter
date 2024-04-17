@@ -20,7 +20,7 @@ class DioConsumer implements ApiConsumer {
         return status! < 500;
       };
 
-    dio.interceptors.add(di.locator<DioInterceptor>());
+    // dio.interceptors.add(di.locator<DioInterceptor>());
 
     if (kDebugMode) {
       dio.interceptors.add(LogInterceptor(

@@ -2,13 +2,13 @@
 // ignore: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:intl/intl.dart' as intl;
 import 'package:easy_localization/src/public_ext.dart';
 
-import '../resources/app_colors.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_font_family.dart';
+
 
 class CustomTextFaild extends StatefulWidget {
   final Widget? Icon;

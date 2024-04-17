@@ -5,12 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/app_cubit/app_cubit.dart';
 import 'package:neurosync/core/components/app_button.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
-import 'package:neurosync/core/resources/app_font_family.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/features/auth/screens/last_registeration_screen.dart';
 import 'package:neurosync/features/auth/widgets/changable_registeration_layout_core.dart';
 import 'package:neurosync/features/auth/widgets/registeration_appbar.dart';
+
+import '../../../core/theming/app_colors.dart';
+import '../../../core/theming/app_font_family.dart';
 
 class RegisterationLayout extends StatelessWidget {
   const RegisterationLayout({super.key});

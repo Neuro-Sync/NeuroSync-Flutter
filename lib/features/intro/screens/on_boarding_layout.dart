@@ -5,35 +5,50 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/resources/app_assets.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/resources/app_texts.dart';
 import 'package:neurosync/features/auth/screens/registertion_layout.dart';
 import 'package:neurosync/features/intro/widgets/onboarding_item.dart';
 
-class OnboardingLayout extends StatelessWidget {
-  OnboardingLayout({super.key});
+import '../../../core/theming/app_colors.dart';
+
+class OnboardingLayout extends StatefulWidget {
+  const OnboardingLayout({super.key});
+
+  @override
+  State<OnboardingLayout> createState() => _OnboardingLayoutState();
+}
+
+class _OnboardingLayoutState extends State<OnboardingLayout> {
   List<String> titles = [
     AppTexts.on_boarding_1_body,
     AppTexts.on_boarding_2_body,
     AppTexts.on_boarding_3_body,
     "",
   ];
+
   List<String> bodeis = [
     AppTexts.on_boarding_1_tail,
     AppTexts.on_boarding_2_tail,
     AppTexts.on_boarding_3_tail,
     AppTexts.qrcode_text
   ];
+
   List<String> bgImages = [
     AppAssets.onboarding_1_IC,
     AppAssets.onboarding_2_IC,
     AppAssets.onboarding_3_IC,
     AppAssets.qrcode_IC,
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,15 +81,14 @@ class OnboardingLayout extends StatelessWidget {
         skipTextButton: Text(
           'skip'.tr(),
           style: TextStyle(
-            fontSize: FontSizes.medium,
+            fontSize: FontSizes.small,
             color: Colors.white,
-            fontWeight: FontWeight.w600,
           ),
         ),
         hasFloatingButton: true,
         imageVerticalOffset: 50.h,
         trailingFunction: () {
-              Navigator.push(
+          Navigator.push(
             context,
             CupertinoPageRoute(
               builder: (context) => const RegisterationLayout(),

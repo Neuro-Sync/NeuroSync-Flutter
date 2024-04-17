@@ -9,7 +9,18 @@ class AppColors {
   static Color hintColorRegisterTFFColor = HexColor("#98A2B3");
   static Color btnRegisterationColor = HexColor("#5852A3");
   static Color dropDownColor = HexColor("#AEB2B7");
+  static Color switchColor = HexColor("#6C6CB9");
   static Color lightwhite = HexColor("#E7E8EA");
+  static Color lightAmber = HexColor("#FF8E25");
+  static Color lightMove = HexColor("#E80DE6");
+  static Color lightRed= HexColor("#FFD7D1");
+  static Color lightGrey= HexColor("#CFCFCD");
+  static Color blue= HexColor("#84A3F5");
+  static Color green= HexColor("#0E8622");
+  static Color grey= HexColor("#8F8F8F");
+  static Color lightgrey= HexColor("#E7E5E6");
+  static Color lightlightgrey= HexColor("#8B8B8B");
+  static Color chattopbarColor= HexColor("#EFF4FF");
 }
 
 class HexColor extends Color {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:neurosync/core/resources/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/theming/app_colors.dart';
 
 class EnterNumItem extends StatefulWidget {
   const EnterNumItem(
@@ -19,7 +20,7 @@ class _EnterNumItemState extends State<EnterNumItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 1.w),
+      padding: EdgeInsets.symmetric(horizontal: 1.w),
       child: SizedBox(
         height: 6.h,
         child: AspectRatio(
@@ -27,7 +28,6 @@ class _EnterNumItemState extends State<EnterNumItem> {
           child: TextField(
             autofocus: true,
             onChanged: (value) {
-
               if (value.length == 1 && widget.last == false) {
                 FocusScope.of(context).nextFocus();
               }
@@ -48,7 +48,8 @@ class _EnterNumItemState extends State<EnterNumItem> {
                   borderSide: const BorderSide(width: 2, color: Colors.black12),
                   borderRadius: BorderRadius.circular(6.sp)),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: AppColors.primarycolor),
+                  borderSide:
+                      BorderSide(width: 2, color: AppColors.primarycolor),
                   borderRadius: BorderRadius.circular(8.sp)),
             ),
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../resources/app_colors.dart';
 import '../resources/app_size.dart';
+import '../theming/app_colors.dart';
 import 'app_text.dart';
 
 class AppButton extends StatelessWidget {
