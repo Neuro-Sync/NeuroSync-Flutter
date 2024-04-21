@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 theme: CustomTheme.themeData,
                 debugShowCheckedModeBanner: false,
-                home: const MapScreen(),
+                home: const HomeScreen(),
               );
             }));
   }

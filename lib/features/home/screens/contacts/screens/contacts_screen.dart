@@ -32,16 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.r),
               ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15.w),
-                child: const Column(
-                  children: [
-                    ContactControllerUpperSection(),
-                    ContactsControllerMiddleSection(),
-                    ControllerItem(),
-                    ContactControllerLowerSection(),
-                  ],
-                ),
+              child: const Column(
+                children: [
+                  ContactControllerUpperSection(),
+                  ContactsControllerMiddleSection(),
+                  ControllerItem(),
+                  ContactControllerLowerSection(),
+                ],
               ),
             ),
             Expanded(

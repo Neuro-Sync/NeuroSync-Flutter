@@ -28,8 +28,7 @@ class _ContactControllerLowerSectionState
           width: 32.w,
           borderRadius: 39.r,
           iconSize: 0,
-          selectedTextStyle:
-              TextStyles.font18BlackInterMedium.copyWith(fontSize: 20.sp),
+          selectedTextStyle: TextStyles.font20PrimaryColorSemiBold,
           unSelectedTextStyle: TextStyle(
               color: Colors.black.withOpacity(0.4),
               fontSize: 14,
@@ -51,18 +50,21 @@ class _ContactControllerLowerSectionState
             ),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                    164.0.r), // Replace 10.0 with your desired radius
+                side: BorderSide(
+                  color: AppColors.blueColor,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(164.0.r),
               ),
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(
-                AppColors.grey.withOpacity(0.5)),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(AppColors.chattopbarColor),
           ),
           child: Image.asset(
             AppAssets.undo_down_IC,
             width: 80.w,
             height: 56.h,
-            color: AppColors.darkgrey,
+            color: AppColors.mainScreensTitlesBlueColor,
           ),
         ),
       ],

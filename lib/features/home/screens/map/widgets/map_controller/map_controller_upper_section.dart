@@ -15,39 +15,39 @@ class MapControllerUpperSection extends StatelessWidget {
     return Container(
       color: AppColors.chattopbarColor,
       height: 67.h,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 26.w),
-            child: Text(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 26.w),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
               "Map",
               style: TextStyles.font32WhiteSemiBold,
             ),
-          ),
-          const Spacer(),
-          Container(
-            width: 75.w,
-            height: 35.h,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(17.r),
-                border: Border.all(
-                  color: AppColors.blueColor,
-                  width: 1,
-                )),
-            child: Padding(
-              padding: EdgeInsets.all(8.0.sp),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Networkiconcomponent(),
-                  Gap(5.w),
-                  HeadsetIconComponent(),
-                ],
+            const Spacer(),
+            Container(
+              width: 75.w,
+              height: 35.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17.r),
+                  border: Border.all(
+                    color: AppColors.blueColor,
+                    width: 1,
+                  )),
+              child: Padding(
+                padding: EdgeInsets.all(8.0.sp),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Networkiconcomponent(),
+                    Gap(5.w),
+                    HeadsetIconComponent(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
