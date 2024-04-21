@@ -144,6 +144,14 @@ class _ChatControllerLowerSectionState
             color: AppColors.mainScreensTitlesBlueColor,
           ),
         ),
+    
+    
+    
+    
+    
+    
+    
+    
       ],
     );
   }

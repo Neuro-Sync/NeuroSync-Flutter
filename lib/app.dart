@@ -8,9 +8,7 @@ import 'package:neurosync/core/theming/app_theme.dart';
 
 import 'package:neurosync/core/validators/bloc_providers.dart';
 
-import 'features/home/screens/chat/screens/chat_screen.dart';
 import 'features/home/screens/contacts/screens/contacts_screen.dart';
-import 'features/home/screens/map/screens/map_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key, this.remoteMessage}) : super(key: key);
