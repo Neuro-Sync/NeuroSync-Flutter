@@ -8,16 +8,27 @@ class TextStyles {
   static TextStyle font32WhiteSemiBold = TextStyle(
       fontSize: 32.sp,
       fontWeight: FontWeightHelper.semiBold,
-      color: Colors.white,
-      fontFamily: FontConstants.lorasemiBoldFont);
-  static TextStyle font20greySemiBold = TextStyle(
+      color: AppColors.mainScreensTitlesBlueColor,
+      fontFamily: FontConstants.interSemiBoldFont);
+  static TextStyle font20PrimaryColorSemiBold = TextStyle(
       fontSize: 20.sp,
       fontWeight: FontWeightHelper.semiBold,
-      color: AppColors.grey,
-      fontFamily: FontConstants.lorasemiBoldFont);
+      color: AppColors.mainScreensTitlesBlueColor,
+      fontFamily: FontConstants.interSemiBoldFont);
   static TextStyle font24lightlightgreySemiBold = TextStyle(
       fontSize: 24.sp,
       fontWeight: FontWeightHelper.medium,
       color: AppColors.lightlightgrey,
-      fontFamily: FontConstants.loraMediumFont);
+      fontFamily: FontConstants.interMediumFont);
+
+  static TextStyle font48BlackInterBold = TextStyle(
+      fontSize: 48.sp,
+      fontWeight: FontWeightHelper.bold,
+      color: AppColors.blackColor,
+      fontFamily: FontConstants.interBoldFont);
+  static TextStyle font18BlackInterMedium = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeightHelper.medium,
+      color: Colors.black,
+      fontFamily: FontConstants.interMediumFont);
 }

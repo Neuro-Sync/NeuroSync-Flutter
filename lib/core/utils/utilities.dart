@@ -1,121 +1,29 @@
 // ignore_for_file: constant_identifier_names
 
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/constants/constants.dart';
-
 import 'package:url_launcher/url_launcher.dart';
-
-import '../theming/app_colors.dart';
+import '../components/app_text.dart';
 import '../theming/app_font_family.dart';
 
-Color chooseToastColor(ToastStates state) {
-  Color color;
-  switch (state) {
-    case ToastStates.SUCCESS:
-      color = Colors.green;
-      break;
-    case ToastStates.ERORR:
-      color = Colors.red;
-      break;
-    case ToastStates.WARNING:
-      color = Colors.amber;
-      break;
-  }
-  return color;
-}
+// extension Sizer on num {
+//      double get h => this * 812 / 100;
 
-enum ToastStates {
-  SUCCESS,
-  ERORR,
-  WARNING,
-}
+//      double get w => this * 375/ 100;
+
+//     double get sp =>(((812+375)/2)*this)/100;
+
+// }
+
+enum MediaTypes { video, Image }
 
 class AppUtil {
   static GlobalKey<NavigatorState>? navigatorKey;
-
-  
-  static appAlert(
-    context, {
-    String? title,
-    String? msg,
-    required ToastStates states,
-  }) {
-    return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        dismissDirection: DismissDirection.horizontal,
-        padding: EdgeInsets.only(
-            bottom: 10.h,
-            right: kIsWeb && Constants.getwidth(context) > 800 ? 600 : 0,
-            left: kIsWeb && Constants.getwidth(context) > 600 ? 500 : 0),
-        elevation: 0,
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.transparent,
-        content: Container(
-            decoration: BoxDecoration(
-              color: chooseToastColor(states),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-// Expanded(
-//   flex: 2,
-//   child: Container(
-
-//        padding:
-//        EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
-//       decoration: BoxDecoration(
-//         color: contentType == ContentType.warning
-//             ? Colors.amber[400]
-//             : contentType == ContentType.failure
-//                 ? AppUi.colors.failureRed
-//                 : AppUi.colors.successGreen,
-//         borderRadius: const BorderRadius.only(
-//             topRight: Radius.circular(5),
-//             bottomRight: Radius.circular(5)),
-//       ),
-//       child: contentType == ContentType.failure
-//           ? Image.asset(AppUi.assets.errorIcon)
-//           : Image.asset(AppUi.assets.successIcon)),
-// ),
-                SizedBox(
-                  width: 3.w,
-                ),
-                Expanded(
-                  flex: 5,
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 3.w, vertical: 2.h),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        AppText(title ?? '',
-                            fontSize: 3.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.primarycolor),
-                        SizedBox(
-                          height: 1.h,
-                        ),
-                        AppText(
-                          msg ?? '',
-                          color: AppColors.primarycolor,
-                          maxLines: 2,
-                          textOverflow: TextOverflow.ellipsis,
-                          fontSize: 15.sp,
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ))));
-  }
 
   static launchURL(String url) async {
     url = url;
@@ -126,6 +34,21 @@ class AppUtil {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  // static Future<MediaTypes> getmediaType(String path) async {
+  //   if (lookupMimeType(path.toString()).toString().startsWith('video/')) {
+  //     return MediaTypes.video;
+  //   } else {
+  //     return MediaTypes.Image;
+  //   }
+  // }
+
+  static Future<void> share(linkUrl) async {
+    await FlutterShare.share(
+      title: "مشاركة الرابط",
+      linkUrl: linkUrl,
+    );
   }
 
   static String getMessageTime(
@@ -158,7 +81,7 @@ class AppUtil {
     final snackBar = SnackBar(
       content: AppText(
         content,
-        fontFamily: FontConstants.loraRegularFont,
+        fontFamily: FontConstants.interMediumFont,
         color: Colors.white,
       ),
       duration: const Duration(seconds: 2),
@@ -166,4 +89,38 @@ class AppUtil {
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
+}
+
+void defaultShowToast({
+  required String message,
+  required ToastStates states,
+}) =>
+    Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 5,
+        backgroundColor: chooseToastColor(states),
+        textColor: Colors.white,
+        fontSize: 16.0);
+Color chooseToastColor(ToastStates state) {
+  Color color;
+  switch (state) {
+    case ToastStates.SUCCESS:
+      color = Colors.green;
+      break;
+    case ToastStates.ERORR:
+      color = Colors.red;
+      break;
+    case ToastStates.WARNING:
+      color = Colors.amber;
+      break;
+  }
+  return color;
+}
+
+enum ToastStates {
+  SUCCESS,
+  ERORR,
+  WARNING,
 }

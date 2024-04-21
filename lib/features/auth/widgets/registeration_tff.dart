@@ -72,7 +72,7 @@ class RegisterationTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 55.h,
-      width: AppSize.getwidth(context)*0.9,
+      width: 488.w,
       child: TextFormField(
           cursorColor: Colors.white,
           keyboardType: type,
@@ -85,7 +85,7 @@ class RegisterationTextFormField extends StatelessWidget {
               hintText: hintTxt,
               hintStyle: TextStyle(
                 fontSize: FontSizes.small,
-                color: AppColors.hintColorRegisterTFFColor,
+                color: AppColors.blackColor,
               ),
               focusedErrorBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.red, width: 0.7),

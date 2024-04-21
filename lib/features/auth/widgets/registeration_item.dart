@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/resources/app_size.dart';
+import 'package:neurosync/core/theming/app_styles.dart';
 import 'package:neurosync/features/auth/widgets/registeration_tff.dart';
-import '../../../core/theming/app_colors.dart';
-import '../../../core/theming/app_font_family.dart';
 
 class RegisterationItem extends StatelessWidget {
   const RegisterationItem(
@@ -30,17 +27,14 @@ class RegisterationItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppText(
+          Text(
             title.toString(),
-            color: Colors.white,
-            fontSize: FontSizes.veryLarge,
-            fontFamily: FontConstants.loraBoldFont,
+            style: TextStyles.font48BlackInterBold,
           ),
           Gap(8.h),
-          AppText(
+          Text(
             subtitle.toString(),
-            color: AppColors.subtitleRegisterationColor,
-            fontSize: FontSizes.small,
+            style: TextStyles.font18BlackInterMedium.copyWith(fontSize: 20.sp),
           ),
           Gap(44.h),
           RegisterationTextFormField(

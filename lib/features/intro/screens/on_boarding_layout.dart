@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/resources/app_assets.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/resources/app_texts.dart';
+import 'package:neurosync/core/theming/app_styles.dart';
 import 'package:neurosync/features/auth/screens/registertion_layout.dart';
 import 'package:neurosync/features/intro/widgets/onboarding_item.dart';
 
@@ -39,10 +40,10 @@ class _OnboardingLayoutState extends State<OnboardingLayout> {
   ];
 
   List<String> bgImages = [
-    AppAssets.onboarding_1_IC,
-    AppAssets.onboarding_2_IC,
-    AppAssets.onboarding_3_IC,
-    AppAssets.qrcode_IC,
+    AppAssets.onboarding_1,
+    AppAssets.onboarding_2,
+    AppAssets.onboarding_3,
+    AppAssets.qrcode,
   ];
 
   @override
@@ -69,21 +70,14 @@ class _OnboardingLayoutState extends State<OnboardingLayout> {
         },
         trailing: Text(
           'skip'.tr(),
-          style: TextStyle(
-            fontSize: FontSizes.medium,
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-          ),
+          style: TextStyles.font18BlackInterMedium.copyWith(fontSize: 24.sp),
         ),
         addController: true,
         hasSkip: true,
         centerBackground: true,
         skipTextButton: Text(
           'skip'.tr(),
-          style: TextStyle(
-            fontSize: FontSizes.small,
-            color: Colors.white,
-          ),
+          style: TextStyles.font18BlackInterMedium.copyWith(fontSize: 24.sp),
         ),
         hasFloatingButton: true,
         imageVerticalOffset: 50.h,
@@ -104,7 +98,7 @@ class _OnboardingLayoutState extends State<OnboardingLayout> {
             ),
           );
         },
-        controllerColor: Colors.white,
+        controllerColor: AppColors.blackColor,
         totalPage: 4,
         headerBackgroundColor: AppColors.primarycolor,
         background: List.generate(
@@ -113,8 +107,8 @@ class _OnboardingLayoutState extends State<OnboardingLayout> {
                   padding: EdgeInsets.only(top: index == 3 ? 100.h : 0.h),
                   child: Image.asset(
                     bgImages[index],
-                    width: index == 3 ? 267.w : 253.w,
-                    height: index == 3 ? 230.h : 340.h,
+                    width: index == 3 ? 310.w : 300.w,
+                    height: index == 3 ? 260.h : 380.h,
                   ),
                 )),
         speed: 1.8,

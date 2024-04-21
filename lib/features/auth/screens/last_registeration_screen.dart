@@ -7,6 +7,7 @@ import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_font_family.dart';
+import '../../../core/theming/app_styles.dart';
 import '../../preparing/screens/demo/screens/entertainment_screen.dart';
 
 class RegisterationCongratulationsScreen extends StatelessWidget {
@@ -19,43 +20,38 @@ class RegisterationCongratulationsScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          AppText(
+          Text(
             "Woohoo!",
-            color: Colors.white,
-            fontSize: 40.sp,
-            fontFamily: FontConstants.loraBoldFont,
+            style: TextStyles.font48BlackInterBold,
           ),
           Gap(16.h),
           Center(
             child: SizedBox(
               width: 342,
-              child: AppText(
+              child: Text(
                 "Registration complete! Get ready to have the best experiences of your life.",
-                color: AppColors.hintColorRegisterTFFColor,
-                fontSize: FontSizes.medium,
-                textAlign: TextAlign.center,
+                style:
+                    TextStyles.font18BlackInterMedium.copyWith(fontSize: 20.sp),
               ),
             ),
           ),
-          Gap(287.h),
+          Gap(70.h),
           AppButton(
             color: AppColors.btnRegisterationColor,
             titleColor: Colors.white,
-            width: 327.w,
+            width: 490.w,
             height: 50.h,
             title: "Let start!",
             radius: 10.sp,
-            fontFamily: FontConstants.lorasemiBoldFont,
-            fontSize: FontSizes.small,
+            fontFamily: FontConstants.interBoldFont,
+            fontSize: FontSizes.large,
             onTap: () {
-                    Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) =>
-                                const EnterTainmentScreen(),
-                          ),
-                        );
-              
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const EnterTainmentScreen(),
+                ),
+              );
             },
           ),
         ],

@@ -5,6 +5,7 @@ import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_font_family.dart';
+import '../../../core/theming/app_styles.dart';
 
 class DatePicker extends StatefulWidget {
   const DatePicker({super.key});
@@ -23,22 +24,19 @@ class _DatePickerState extends State<DatePicker> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppText(
+          Text(
             "What is your date of birth?",
-            color: Colors.white,
-            fontSize: FontSizes.veryLarge,
-            fontFamily: FontConstants.loraBoldFont,
+            style: TextStyles.font48BlackInterBold,
           ),
           Gap(8.h),
-          AppText(
+          Text(
             "Don't worry, your date of birth will not appear in public",
-            color: AppColors.subtitleRegisterationColor,
-            fontSize: FontSizes.small,
+            style: TextStyles.font18BlackInterMedium.copyWith(fontSize: 20.sp),
           ),
           Gap(44.h),
           Container(
             height: 55.h,
-            width: AppSize.getwidth(context) * 0.9,
+            width: 488.w,
             decoration: BoxDecoration(
               border: Border.all(
                 color: AppColors.hintColorRegisterTFFColor,
@@ -76,7 +74,7 @@ class _DatePickerState extends State<DatePicker> {
                     color: AppColors.hintColorRegisterTFFColor,
                   ),
                 ),
-                const SizedBox(width: 19),
+                SizedBox(width: 19.w),
               ],
             ),
           ),

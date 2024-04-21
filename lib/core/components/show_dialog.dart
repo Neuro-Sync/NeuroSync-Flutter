@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: non_constant_identifier_names
 Future<void> ShowDialog(context,
@@ -12,7 +11,7 @@ Future<void> ShowDialog(context,
     context: context,
     barrierDismissible: false,
     builder: (BuildContext context) {
-      return Container(
+      return SizedBox(
         width: double.infinity,
         child: AlertDialog(
             insetPadding: EdgeInsets.symmetric(horizontal: 10.w),

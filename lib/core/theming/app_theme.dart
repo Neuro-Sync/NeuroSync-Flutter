@@ -31,7 +31,7 @@ class CustomTheme {
         ),
       ),
     ),
-    fontFamily: FontConstants.loraMediumFont,
+    fontFamily: FontConstants.interMediumFont,
     textTheme: TextTheme(
       displayLarge: TextStyle(
           fontSize: FontSizes.large,
@@ -40,11 +40,11 @@ class CustomTheme {
       titleLarge: TextStyle(fontSize: FontSizes.large, color: Colors.white),
       bodyMedium: TextStyle(
           fontSize: FontSizes.medium,
-          fontFamily: FontConstants.loraRegularFont,
+          fontFamily: FontConstants.interRegularFont,
           color: Colors.white),
       headlineMedium: TextStyle(
         fontSize: FontSizes.medium,
-        fontFamily: FontConstants.loraRegularFont,
+        fontFamily: FontConstants.interRegularFont,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),

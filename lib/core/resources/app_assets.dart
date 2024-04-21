@@ -6,11 +6,10 @@ const basePathLottie = "assets/lottie/";
 const basePathFonts = "assets/fonts/";
 
 class AppAssets {
-  static const String onboarding_1_IC = "${basePathImages}onboarding_first.png";
-  static const String onboarding_2_IC =
-      "${basePathImages}onboarding_second.png";
-  static const String onboarding_3_IC = "${basePathImages}onboarding_third.png";
-  static const String qrcode_IC = "${basePathImages}qr_code.png";
+  static const String onboarding_1 = "${basePathImages}onboarding_first.png";
+  static const String onboarding_2 = "${basePathImages}onboarding_second.png";
+  static const String onboarding_3 = "${basePathImages}onboarding_third.png";
+  static const String qrcode = "${basePathImages}qr_code.png";
   static const String neuro_spalsh_IC = "${basePathImages}neuro_spalsh.png";
   static const String headset_IC = "${basePathImages}headset.png";
   static const String network_IC = "${basePathImages}network.png";
@@ -22,4 +21,11 @@ class AppAssets {
   static const String undo_IC = "${basePathImages}undo.png";
   static const String send_IC = "${basePathImages}send.png";
   static const String person_IC = "${basePathImages}person.png";
+  static const String onboarding_IC = "${basePathImages}onboarding.png";
+  static const String call_IC = "${basePathImages}call.png";
+  static const String undo_down_IC = "${basePathIcons}undo_down.png";
+  static const String clinic_icon_IC = "${basePathIcons}clinic_icon.png";
+  static const String home_icon_IC = "${basePathIcons}home_icon.png";
+  static const String office_icon_IC = "${basePathIcons}office_icon.png";
+  static const String persons_icon_IC = "${basePathIcons}persons_icon.png";
 }

@@ -5,6 +5,7 @@ import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_assets.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/resources/app_texts.dart';
+import 'package:neurosync/core/theming/app_styles.dart';
 
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_font_family.dart';
@@ -18,20 +19,17 @@ class OnBoardingFirstScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
           Gap(41.h),
           AppText(
             AppTexts.on_boarding_1_body,
             fontFamily: FontConstants.lorasemiBoldFont,
             fontSize: FontSizes.veryLarge,
-            color: Colors.white,
+            color: Colors.black,
           ),
           Gap(8.h),
-          AppText(
+          Text(
             AppTexts.on_boarding_1_tail,
-            fontFamily: FontConstants.lorasemiBoldFont,
-            fontSize: FontSizes.medium,
-            color: AppColors.introBodyColor,
+            style: TextStyles.font48BlackInterBold,
           ),
         ],
       ),

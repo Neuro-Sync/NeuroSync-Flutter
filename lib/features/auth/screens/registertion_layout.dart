@@ -22,54 +22,19 @@ class RegisterationLayout extends StatelessWidget {
       body: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           AppCubit cubit = AppCubit.get(context);
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Gap(50.h),
-              RegisterationAppBar(
-                currentScreen: cubit.currentIndex,
-              ),
-              Gap(32.h),
-              const ChangableRegisterationCore(),
-              Gap(32.h),
-              Center(
-                child: AppButton(
-                  color: AppColors.btnRegisterationColor,
-                  titleColor: Colors.white,
-                  width: 327.w,
-                  height: 50.h,
-                  title: cubit.currentIndex == 3 ? "Send Code" : "Next",
-                  radius: 10.sp,
-                  fontFamily: FontConstants.lorasemiBoldFont,
-                  fontSize: FontSizes.small,
-                  onTap: () {
-                    switch (cubit.currentIndex) {
-                      case 0:
-                        cubit.changeCurrentregisterScreen(1);
-                      case 1:
-                        cubit.changeCurrentregisterScreen(2);
-
-                      case 2:
-                        cubit.changeCurrentregisterScreen(3);
-
-                      case 3:
-                        cubit.changeCurrentregisterScreen(4);
-                      case 4:
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) =>
-                                const RegisterationCongratulationsScreen(),
-                          ),
-                        );
-
-                      default:
-                    }
-                    return const Placeholder();
-                  },
+          return Padding(
+            padding: EdgeInsets.only(left: 70.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Gap(50.h),
+                RegisterationAppBar(
+                  currentScreen: cubit.currentIndex,
                 ),
-              )
-            ],
+                Gap(120.h),
+                const ChangableRegisterationCore(),
+              ],
+            ),
           );
         },
       ),

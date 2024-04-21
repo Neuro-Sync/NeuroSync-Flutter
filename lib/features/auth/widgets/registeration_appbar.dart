@@ -42,8 +42,9 @@ class RegisterationAppBar extends StatelessWidget {
             const Spacer(),
             AppText(
               "Step ${currentScreen} of 5",
-              color: Colors.white,
-              fontSize: FontSizes.medium,
+              color: Colors.black,
+              fontSize: FontSizes.large,
+              fontWeight: FontWeight.w900,
             ),
             Gap(24.w),
           ],

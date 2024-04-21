@@ -3,13 +3,13 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/components/app_button.dart';
 import 'package:neurosync/core/components/app_text.dart';
-import 'package:neurosync/core/utils/utilities.dart';
 import 'package:neurosync/features/preparing/screens/test_AI_model/widgtes/enter_num_item.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tfl;
 
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/utils/utilities.dart';
 
 class TestSumModelScreen extends StatefulWidget {
   const TestSumModelScreen({super.key});
@@ -75,8 +75,8 @@ class _TestSumModelScreenState extends State<TestSumModelScreen> {
                 print("hhghh");
                 print(inputs.length.toString());
                 print(inputs.toString());
-                AppUtil.appAlert(context,
-                    states: ToastStates.WARNING, msg: "Please enter 6 numbers");
+                // AppUtil.appAlert(context,
+                //     states: ToastStates.WARNING, msg: "Please enter 6 numbers");
               } else {
                 print("hhghh54554");
 
@@ -84,7 +84,7 @@ class _TestSumModelScreenState extends State<TestSumModelScreen> {
               }
             },
           ),
-           SizedBox(
+          SizedBox(
             height: 2.h,
           ),
           AppButton(
@@ -97,7 +97,7 @@ class _TestSumModelScreenState extends State<TestSumModelScreen> {
               numsControllers.forEach((element) {
                 element.clear();
               });
-              outputresult="";
+              outputresult = "";
               setState(() {});
             },
           ),
