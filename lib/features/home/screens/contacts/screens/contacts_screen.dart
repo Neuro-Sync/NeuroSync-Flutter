@@ -9,14 +9,14 @@ import '../widgets/contact_controller/contact_controller_item.dart';
 import '../widgets/contacts_item.dart';
 
 //TODO:HANDLING FONTFAMILY PROBLEM
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ContactsScreen extends StatefulWidget {
+  const ContactsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ContactsScreen> createState() => _ContactsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ContactsScreenState extends State<ContactsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,8 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/theming/app_theme.dart';
 
 import 'package:neurosync/core/validators/bloc_providers.dart';
+import 'package:neurosync/features/home/screens/map/screens/map_screen.dart';
+import 'package:neurosync/features/intro/screens/on_boarding_layout.dart';
 
 import 'features/home/screens/contacts/screens/contacts_screen.dart';
+import 'features/home/screens/wheelchair/screens/wheelchair_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key, this.remoteMessage}) : super(key: key);
@@ -36,7 +39,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 theme: CustomTheme.themeData,
                 debugShowCheckedModeBanner: false,
-                home: const HomeScreen(),
+                home: const OnboardingLayout(),
               );
             }));
   }

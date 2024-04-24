@@ -1,38 +1,32 @@
-// ignore_for_file: use_build_context_synchronously, library_private_types_in_public_api
+// ignore_for_file: use_build_context_synchronously, library_private_types_in_public_api, avoid_print
 
 import 'dart:async';
 import 'dart:developer';
-// import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
-
-import '../../../../../core/components/app_button.dart';
-import '../../../../../core/components/app_text.dart';
-import '../../../../../core/theming/app_colors.dart';
-import '../widgets/map_controller/map_controller_item.dart';
-import '../widgets/map_controller/map_controller_lower_section.dart';
-import '../widgets/map_controller/map_controller_middle_section.dart';
-import '../widgets/map_controller/map_controller_upper_section.dart';
+import '../widgets/wheelchair_controller/wheelchair_controller_item.dart';
+import '../widgets/wheelchair_controller/wheelchair_controller_lower_section.dart';
+import '../widgets/wheelchair_controller/wheelchair_controller_middle_section.dart';
+import '../widgets/wheelchair_controller/wheelchair_controller_statistical_section.dart';
+import '../widgets/wheelchair_controller/wheelchair_controller_upper_section.dart';
 
 final places =
-    GoogleMapsPlaces(apiKey: '');
+    GoogleMapsPlaces(apiKey: 'AIzaSyBUs7H6Uh-p7qc83M3std0ixymh7oaTR18');
 
-class MapScreen extends StatefulWidget {
-  const MapScreen({
+class WheelChairScreen extends StatefulWidget {
+  const WheelChairScreen({
     super.key,
   });
 
   @override
-  _MapScreenState createState() => _MapScreenState();
+  _WheelChairState createState() => _WheelChairState();
 }
 
-class _MapScreenState extends State<MapScreen> {
+class _WheelChairState extends State<WheelChairScreen> {
   LatLng? _currentPosition;
   Set<Marker> markers = {};
   TextEditingController? addressTFController;
@@ -56,21 +50,6 @@ class _MapScreenState extends State<MapScreen> {
   void onMapCreated(GoogleMapController controller) {
     mapController = controller;
     setState(() {});
-  }
-
-  void _changeLocation(double zoom, LatLng latLng) {
-    double newZoom = zoom > 15 ? zoom : 15;
-    _currentPosition = latLng;
-    setState(() {
-      mapController!.animateCamera(CameraUpdate.newCameraPosition(
-          CameraPosition(target: latLng, zoom: newZoom)));
-      markers.clear();
-      selectedPosition = latLng;
-      markers.add(Marker(
-        markerId: const MarkerId('1'),
-        position: latLng,
-      ));
-    });
   }
 
   @override
@@ -152,17 +131,6 @@ class _MapScreenState extends State<MapScreen> {
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  // Future<void> GetAddressFromLatLong(Position position) async {
-  //   List<Placemark> placemarks =
-  //       await placemarkFromCoordinates(position.latitude, position.longitude);
-  //   print(placemarks);
-  //   Placemark place = placemarks[0];
-
-  //   area = ' ${place.locality}, ${place.country}';
-  //   setState(() {
-  //     AddPostCubit.get(context).selectedAreaFromMap = area;
-  //   });
-  // }
   Future<void> getAddressFromLatLong(LatLng position) async {
     List<Placemark> placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
@@ -189,10 +157,11 @@ class _MapScreenState extends State<MapScreen> {
             ),
             child: const Column(
               children: [
-                MapControllerUpperSection(),
-                MapControllerMiddleSection(),
-                MapControllerItem(),
-                MapControllerLowerSection(),
+                WheelChairControllerUpperSection(),
+                WheelChairControllerStatisticalSection(),
+                WheelChairControllerMiddleSection(),
+                WheelChairControllerItem(),
+                WheelChairControllerLowerSection(),
               ],
             ),
           ),

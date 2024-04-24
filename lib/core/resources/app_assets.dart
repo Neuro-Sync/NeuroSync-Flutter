@@ -28,4 +28,6 @@ class AppAssets {
   static const String home_icon_IC = "${basePathIcons}home_icon.png";
   static const String office_icon_IC = "${basePathIcons}office_icon.png";
   static const String persons_icon_IC = "${basePathIcons}persons_icon.png";
+  static const String heart_rate_ic = "${basePathIcons}heart_rate_ic.svg";
+  static const String bood_oxygen_ic = "${basePathIcons}bood_oxygen_ic.svg";
 }

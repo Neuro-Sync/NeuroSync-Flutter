@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color primarycolor = HexColor("#F3F3F3");
+  static Color lightredcolor = HexColor("#FBF0F3");
+  static Color heartrategraycolor = HexColor("#818181");
+  static Color heartratewhitecolor = HexColor("#FFFEFE");
+  static Color bloodoxygengreencolor = HexColor("#D0FBFF");
   static Color contactsBlackcolor = HexColor("#1E1E1E");
   static Color blackColor = HexColor("#263238");
   static Color mainScreensTitlesBlueColor = HexColor("#0058A9");

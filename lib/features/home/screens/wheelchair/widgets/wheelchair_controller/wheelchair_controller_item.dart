@@ -7,14 +7,14 @@ import 'dart:math' as math;
 
 import '../../../../../../core/theming/app_colors.dart';
 
-class ChatControllerItem extends StatelessWidget {
-  const ChatControllerItem({super.key});
+class WheelChairControllerItem extends StatelessWidget {
+  const WheelChairControllerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 260.w,
-      height: 260.h,
+      width: 250.w,
+      height: 250.h,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: AppColors.blueColor, width: 1)),
@@ -28,43 +28,36 @@ class ChatControllerItem extends StatelessWidget {
                 color: AppColors.mainScreensTitlesBlueColor,
                 size: 50.sp,
               )),
-          Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.keyboard_arrow_left,
+                    color: AppColors.mainScreensTitlesBlueColor,
+                    size: 50.sp,
+                  )),
               Container(
-                  height: 50.h,
-                  width: 110.w,
-                  decoration: BoxDecoration(
-                      color: AppColors.chattopbarColor,
-                      border: Border.fromBorderSide(BorderSide(
-                          width: 1,
-                          color: AppColors.mainScreensTitlesBlueColor)),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(
-                          110.r,
-                        ),
-                        topRight: Radius.circular(110.r),
-                      )),
-                  child: Center(
-                      child: Text("Play",
-                          style: TextStyles.font20PrimaryColorSemiBold
-                              .copyWith(fontSize: 16.sp)))),
-              Gap(10.h),
-              Container(
-                  height: 50.h,
-                  width: 110.w,
+                  height: 96.h,
+                  width: 96.h,
                   decoration: BoxDecoration(
                       border: Border.fromBorderSide(BorderSide(
                           width: 1,
                           color: AppColors.mainScreensTitlesBlueColor)),
                       color: AppColors.chattopbarColor,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(110.r),
-                        bottomRight: Radius.circular(110.r),
-                      )),
+                      borderRadius: BorderRadius.circular(147.r)),
                   child: Center(
-                    child: Text("Return",
+                    child: Text("Enter",
                         style: TextStyles.font20PrimaryColorSemiBold
                             .copyWith(fontSize: 16.sp)),
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.keyboard_arrow_right,
+                    color: AppColors.mainScreensTitlesBlueColor,
+                    size: 50.sp,
                   )),
             ],
           ),
