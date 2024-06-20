@@ -49,7 +49,7 @@ class RegisterationCongratulationsScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => const EnterTainmentScreen(),
+                  builder: (context) => const HomeScreen(),
                 ),
               );
             },
