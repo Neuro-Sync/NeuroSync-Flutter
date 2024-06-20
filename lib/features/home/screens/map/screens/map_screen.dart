@@ -4,24 +4,17 @@ import 'dart:async';
 import 'dart:developer';
 // import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
-
-import '../../../../../core/components/app_button.dart';
-import '../../../../../core/components/app_text.dart';
-import '../../../../../core/theming/app_colors.dart';
 import '../widgets/map_controller/map_controller_item.dart';
 import '../widgets/map_controller/map_controller_lower_section.dart';
 import '../widgets/map_controller/map_controller_middle_section.dart';
 import '../widgets/map_controller/map_controller_upper_section.dart';
 
-final places =
-    GoogleMapsPlaces(apiKey: '');
+final places = GoogleMapsPlaces(apiKey: '');
 
 class MapScreen extends StatefulWidget {
   const MapScreen({

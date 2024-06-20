@@ -4,6 +4,14 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color primarycolor = HexColor("#F3F3F3");
+
+  static Color darkbluecolor = HexColor("#333E66");
+  static Color greycolor = HexColor("#E0E0E0");
+  static Color redcolor = HexColor("#FF0909");
+  static Color bluecolorEntertainment = HexColor("#0989FF");
+  static Color movecolor = HexColor("#7509FF");
+  static Color mintgreencolor = HexColor("#00AFA5");
+  static Color orangecolor = HexColor("#FF6B00");
   static Color lightredcolor = HexColor("#FBF0F3");
   static Color heartrategraycolor = HexColor("#818181");
   static Color heartratewhitecolor = HexColor("#FFFEFE");

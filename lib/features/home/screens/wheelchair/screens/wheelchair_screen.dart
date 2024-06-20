@@ -15,7 +15,7 @@ import '../widgets/wheelchair_controller/wheelchair_controller_statistical_secti
 import '../widgets/wheelchair_controller/wheelchair_controller_upper_section.dart';
 
 final places =
-    GoogleMapsPlaces(apiKey: 'AIzaSyBUs7H6Uh-p7qc83M3std0ixymh7oaTR18');
+    GoogleMapsPlaces(apiKey: '');
 
 class WheelChairScreen extends StatefulWidget {
   const WheelChairScreen({

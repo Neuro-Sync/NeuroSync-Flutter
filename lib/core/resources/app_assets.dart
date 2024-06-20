@@ -4,6 +4,7 @@ const basePathImages = "assets/images/";
 const basePathIcons = "assets/icons/";
 const basePathLottie = "assets/lottie/";
 const basePathFonts = "assets/fonts/";
+const basePathAudio = "assets/audio/";
 
 class AppAssets {
   static const String onboarding_1 = "${basePathImages}onboarding_first.png";
@@ -30,4 +31,12 @@ class AppAssets {
   static const String persons_icon_IC = "${basePathIcons}persons_icon.png";
   static const String heart_rate_ic = "${basePathIcons}heart_rate_ic.svg";
   static const String bood_oxygen_ic = "${basePathIcons}bood_oxygen_ic.svg";
+  static const String images_IC = "${basePathIcons}image_ic.svg";
+  static const String videoes_IC = "${basePathIcons}video_ic.svg";
+  static const String folders_IC = "${basePathIcons}folders_ic.svg";
+  static const String docs_IC = "${basePathIcons}docs_ic.svg";
+  static const String audio_ic = "${basePathIcons}audio_ic.svg";
+
+  ///   ==== Audio sample ====
+  static const String audio_sample = "${basePathAudio}audio_sample.mp3";
 }

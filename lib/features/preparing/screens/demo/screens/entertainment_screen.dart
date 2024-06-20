@@ -95,8 +95,8 @@ class _EnterTainmentScreenState extends State<EnterTainmentScreen> {
                           if (appstate.isClicked == false) {
                             log("enable");
                             cubit.changeControllerAccesss(true);
-                            AppCubit.get(context)
-                                .change(componentWidget: const PdfFilesComponent());
+                            AppCubit.get(context).change(
+                                componentWidget: const PdfFilesComponent());
                             docRef.update({
                               'action': "",
                             });
