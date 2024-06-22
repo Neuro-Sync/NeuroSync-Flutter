@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 
 import '../../../../../core/components/app_text.dart';
 import '../../../../../core/resources/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_font_family.dart';
 
-class AttentionItem extends StatelessWidget {
-  const AttentionItem({super.key});
+class BloodOxgyLevelItem extends StatelessWidget {
+  const BloodOxgyLevelItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.pinkcolor,
+          color: AppColors.mintGreencolor,
           borderRadius: BorderRadius.circular(23.36.r)),
       width: 283.96.w,
       height: 359.88.h,
@@ -22,17 +23,17 @@ class AttentionItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 30.h),
+            padding: EdgeInsets.only(top: 25.h),
             child: SizedBox(
                 width: 150.w,
                 height: 155.h,
                 child: Image.asset(
-                  AppAssets.attention_img,
+                  AppAssets.blood_oxg_img,
                   fit: BoxFit.cover,
                 )),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20.w, top: 72.h),
+            padding: EdgeInsets.only(left: 20.w, top: 80.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,18 +41,19 @@ class AttentionItem extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AppText(
-                    "Attention",
+                    "Blood oxygen level",
                     fontSize: 24.82.sp,
                     color: AppColors.blackColor,
                     fontFamily: FontConstants.loraBoldFont,
                   ),
                 ),
+                Gap(11.h),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     AppText(
-                      "90%",
+                      "95%",
                       fontSize: 25.2.sp,
                       color: AppColors.blackColor,
                       fontFamily: FontConstants.lorasemiBoldFont,
@@ -60,10 +62,10 @@ class AttentionItem extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(right: 10.w),
                       child: SvgPicture.asset(
-                        AppAssets.brain_ic,
+                        AppAssets.heart_rate_ic,
                         color: AppColors.blackColor,
-                        width: 51.58.w,
-                        height: 44.28.h,
+                        width: 40.2.w,
+                        height: 30.64.h,
                       ),
                     )
                   ],
