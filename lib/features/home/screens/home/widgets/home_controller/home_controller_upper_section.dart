@@ -7,8 +7,8 @@ import '../../../../../../core/theming/app_styles.dart';
 import '../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/headset_icon_component.dart';
 import '../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/network_icon_component.dart';
 
-class EntertainmentControllerUpperSection extends StatelessWidget {
-  const EntertainmentControllerUpperSection({super.key});
+class HomeControllerUpperSection extends StatelessWidget {
+  const HomeControllerUpperSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class EntertainmentControllerUpperSection extends StatelessWidget {
           children: [
             Gap(10.w),
             Text(
-              "Entertainment",
+              "Home",
               style: TextStyles.font32WhiteSemiBold,
             ),
             const Spacer(),

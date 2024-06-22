@@ -36,6 +36,22 @@ class AppAssets {
   static const String folders_IC = "${basePathIcons}folders_ic.svg";
   static const String docs_IC = "${basePathIcons}docs_ic.svg";
   static const String audio_ic = "${basePathIcons}audio_ic.svg";
+  static const String chat_ic = "${basePathIcons}chat_ic.svg";
+  static const String map_ic = "${basePathIcons}map_ic.svg";
+  static const String entertainment_ic = "${basePathIcons}entertainment_ic.svg";
+  static const String user_ic = "${basePathIcons}user_ic.svg";
+  static const String arrow_left_ic = "${basePathIcons}left_ic.svg";
+  static const String arrow_right_ic = "${basePathIcons}right_ic.svg";
+  static const String arrow_up_ic = "${basePathIcons}up_ic.svg";
+  static const String arrow_down_ic = "${basePathIcons}bottom_ic.svg";
+  static const String temp_ic = "${basePathIcons}temp_ic.svg";
+
+  ///
+  static const String attention_img = "${basePathImages}attention_img.png";
+  static const String blood_oxg_img = "${basePathImages}blood_oxg_img.png";
+  static const String heart_rate_img = "${basePathImages}heart_rate_img.png";
+  static const String temp_img = "${basePathImages}temp_img.png";
+  static const String brain_ic = "${basePathIcons}brain_ic.svg";
 
   ///   ==== Audio sample ====
   static const String audio_sample = "${basePathAudio}audio_sample.mp3";

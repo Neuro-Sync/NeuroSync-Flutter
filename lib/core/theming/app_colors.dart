@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color primarycolor = HexColor("#F3F3F3");
-
   static Color darkbluecolor = HexColor("#333E66");
+  static Color bluecolor = HexColor("#366EFF");
+  static Color ambercolor = HexColor("#FFC97E");
+  static Color lightmovecolor = HexColor("#8E97FD");
+  static Color pinkcolor = HexColor("#D9A5B5");
+  static Color mintGreencolor = HexColor("#AFDBC5");
   static Color greycolor = HexColor("#E0E0E0");
   static Color redcolor = HexColor("#FF0909");
   static Color bluecolorEntertainment = HexColor("#0989FF");
@@ -39,6 +43,9 @@ class AppColors {
   static Color lightlightgrey = HexColor("#8B8B8B");
   static Color chattopbarColor = HexColor("#EFF4FF");
   static Color chatSendLocationbtnIconColor = HexColor("#3478F5");
+  static Color offWhiteColor = HexColor("#FFF6E9");
+  static Color lightBlueColor = HexColor("#C3E2FF");
+  static Color heavyBlueColor = HexColor("#2176A0");
 }
 
 class HexColor extends Color {

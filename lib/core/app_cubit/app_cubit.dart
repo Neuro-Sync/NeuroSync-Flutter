@@ -33,7 +33,7 @@ class AppCubit extends Cubit<AppState> {
   };
   Map<String, dynamic> networkIconNeighbors = {
     "bottom": NotificationIconItem(),
-    "left": SwitchComponent(),
+    "left": const SwitchComponent(),
     "right": HeadsetIconComponent(),
     "top": const SizedBox.shrink(),
   };
@@ -48,48 +48,48 @@ class AppCubit extends Cubit<AppState> {
 
   Map<String, dynamic> filesNeighbors = {
     "bottom": ImagesFilesComponent(),
-    "left": PdfFilesComponent(),
+    "left": const PdfFilesComponent(),
     "right": const SizedBox.shrink(),
     "top": NotificationIconItem(),
   };
 
   Map<String, dynamic> videosNeighbors = {
-    "bottom": RecordComponent(),
+    "bottom": const RecordComponent(),
     "left": const SizedBox.shrink(),
     "right": const SizedBox.shrink(),
     "top": ImagesFilesComponent(),
   };
 
   Map<String, dynamic> titleNeighbors = {
-    "bottom": PdfFilesComponent(),
+    "bottom": const PdfFilesComponent(),
     "left": const SizedBox.shrink(),
     "right": NotificationIconItem(),
-    "top": SwitchComponent(),
+    "top": const SwitchComponent(),
   };
 
   Map<String, dynamic> recordNeighbors = {
-    "bottom": VideosFilesComponent(),
+    "bottom": const VideosFilesComponent(),
     "left": const SizedBox.shrink(),
     "right": ImagesFilesComponent(),
-    "top": PdfFilesComponent(),
+    "top": const PdfFilesComponent(),
   };
 
   Map<String, dynamic> pdfNeighbors = {
-    "bottom": VideosFilesComponent(),
+    "bottom": const VideosFilesComponent(),
     "left": const SizedBox.shrink(),
     "right": FilesComponent(),
-    "top": TitleTextComponent(),
+    "top": const TitleTextComponent(),
   };
 
   Map<String, dynamic> notificationIconNeighbors = {
     "bottom": FilesComponent(),
-    "left": TitleTextComponent(),
+    "left": const TitleTextComponent(),
     "right": const SizedBox.shrink(),
     "top": HeadsetIconComponent(),
   };
   Map<String, dynamic> imagesNeighbors = {
-    "bottom": VideosFilesComponent(),
-    "left": RecordComponent(),
+    "bottom": const VideosFilesComponent(),
+    "left": const RecordComponent(),
     "right": const SizedBox.shrink(),
     "top": FilesComponent(),
   };

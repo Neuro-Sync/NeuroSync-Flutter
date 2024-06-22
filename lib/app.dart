@@ -6,9 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/theming/app_theme.dart';
 import 'package:neurosync/core/validators/bloc_providers.dart';
-import 'features/auth/screens/registertion_layout.dart';
-import 'features/home/screens/edit_profile/screens/edit_profile_screen.dart';
-import 'features/intro/screens/on_boarding_layout.dart';
+import 'package:neurosync/features/home/screens/home/screens/home_screen.dart';
+import 'package:neurosync/features/home/screens/map/screens/map_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key, this.remoteMessage}) : super(key: key);
@@ -36,7 +35,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 theme: CustomTheme.themeData,
                 debugShowCheckedModeBanner: false,
-                home: OnboardingLayout(),
+                home: const HomeScreen(),
               );
             }));
   }

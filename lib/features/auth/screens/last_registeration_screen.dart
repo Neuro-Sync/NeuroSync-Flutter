@@ -8,6 +8,7 @@ import 'package:neurosync/core/resources/app_size.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_font_family.dart';
 import '../../../core/theming/app_styles.dart';
+import '../../home/screens/home/screens/home_screen.dart';
 import '../../preparing/screens/demo/screens/entertainment_screen.dart';
 
 class RegisterationCongratulationsScreen extends StatelessWidget {
@@ -49,7 +50,7 @@ class RegisterationCongratulationsScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => const EnterTainmentScreen(),
+                  builder: (context) => const HomeScreen(),
                 ),
               );
             },
