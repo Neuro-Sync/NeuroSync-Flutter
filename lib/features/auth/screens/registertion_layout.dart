@@ -13,6 +13,7 @@ class RegisterationLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           AppCubit cubit = AppCubit.get(context);

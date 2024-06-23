@@ -14,9 +14,6 @@ import '../widgets/wheelchair_controller/wheelchair_controller_middle_section.da
 import '../widgets/wheelchair_controller/wheelchair_controller_statistical_section.dart';
 import '../widgets/wheelchair_controller/wheelchair_controller_upper_section.dart';
 
-final places =
-    GoogleMapsPlaces(apiKey: '');
-
 class WheelChairScreen extends StatefulWidget {
   const WheelChairScreen({
     super.key,
@@ -32,20 +29,9 @@ class _WheelChairState extends State<WheelChairScreen> {
   TextEditingController? addressTFController;
   List<Prediction> predictions = [];
   GoogleMapController? mapController;
-  String area = 'search';
 
   final TextEditingController searchController = TextEditingController();
   LatLng? selectedPosition;
-  Future<List<Prediction>> getPredictions(String query) async {
-    PlacesAutocompleteResponse response = await places.autocomplete(
-      query,
-    );
-    if (response.isOkay) {
-      return response.predictions;
-    } else {
-      return [];
-    }
-  }
 
   void onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -65,7 +51,6 @@ class _WheelChairState extends State<WheelChairScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      log("denied1");
       Navigator.pop(context);
       return Future.error('Location services are disabled.');
     }
@@ -73,14 +58,12 @@ class _WheelChairState extends State<WheelChairScreen> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        log("denied1");
         Navigator.pop(context);
 
         return Future.error('Location permissions are denied');
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      log("denied1 for ever");
       Navigator.pop(context);
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
@@ -131,15 +114,6 @@ class _WheelChairState extends State<WheelChairScreen> {
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  Future<void> getAddressFromLatLong(LatLng position) async {
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
-    print(placemarks);
-    Placemark place = placemarks[0];
-
-    area = ' ${place.locality}, ${place.country}';
-  }
-
   Widget _buildMap() {
     if (_currentPosition == null) {
       return const Center(
@@ -158,7 +132,6 @@ class _WheelChairState extends State<WheelChairScreen> {
             child: const Column(
               children: [
                 WheelChairControllerUpperSection(),
-                WheelChairControllerStatisticalSection(),
                 WheelChairControllerMiddleSection(),
                 WheelChairControllerItem(),
                 WheelChairControllerLowerSection(),

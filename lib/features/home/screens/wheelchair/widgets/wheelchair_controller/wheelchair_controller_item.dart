@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/theming/app_styles.dart';
-
 import 'dart:math' as math;
-
+import '../../../../../../core/resources/app_assets.dart';
 import '../../../../../../core/theming/app_colors.dart';
 
 class WheelChairControllerItem extends StatelessWidget {
@@ -13,61 +13,73 @@ class WheelChairControllerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250.w,
-      height: 250.h,
+      width: 260.w,
+      height: 260.h,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: AppColors.blueColor, width: 1)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.keyboard_arrow_up,
-                color: AppColors.mainScreensTitlesBlueColor,
-                size: 50.sp,
-              )),
+          InkWell(
+            onTap: () {},
+            child: SvgPicture.asset(
+              AppAssets.arrow_up_ic,
+              width: 30.w,
+              height: 30.h,
+            ),
+          ),
+          Gap(20.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.keyboard_arrow_left,
-                    color: AppColors.mainScreensTitlesBlueColor,
-                    size: 50.sp,
-                  )),
-              Container(
-                  height: 96.h,
-                  width: 96.h,
-                  decoration: BoxDecoration(
-                      border: Border.fromBorderSide(BorderSide(
-                          width: 1,
-                          color: AppColors.mainScreensTitlesBlueColor)),
-                      color: AppColors.chattopbarColor,
-                      borderRadius: BorderRadius.circular(147.r)),
-                  child: Center(
-                    child: Text("Enter",
-                        style: TextStyles.font20PrimaryColorSemiBold
-                            .copyWith(fontSize: 16.sp)),
-                  )),
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.keyboard_arrow_right,
-                    color: AppColors.mainScreensTitlesBlueColor,
-                    size: 50.sp,
-                  )),
+              InkWell(
+                onTap: () {},
+                child: SvgPicture.asset(
+                  AppAssets.arrow_left_ic,
+                  width: 30.w,
+                  height: 30.h,
+                ),
+              ),
+              Gap(20.h),
+              Column(
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.chattopbarColor,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(30.sp),
+                        child: Center(
+                            child: Text("Enter",
+                                style: TextStyles.font20PrimaryColorSemiBold
+                                    .copyWith(fontSize: 16.sp))),
+                      )),
+                ],
+              ),
+              Gap(20.h),
+              InkWell(
+                onTap: () {},
+                child: SvgPicture.asset(
+                  AppAssets.arrow_right_ic,
+                  width: 30.w,
+                  height: 30.h,
+                ),
+              ),
             ],
           ),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.keyboard_arrow_down,
-                color: AppColors.mainScreensTitlesBlueColor,
-                size: 50.sp,
-              ))
+          Gap(20.h),
+          InkWell(
+            onTap: () {},
+            child: SvgPicture.asset(
+              AppAssets.arrow_down_ic,
+              width: 30.w,
+              height: 30.h,
+              color: AppColors.mainScreensTitlesBlueColor,
+            ),
+          )
         ],
       ),
     );

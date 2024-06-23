@@ -48,40 +48,16 @@ class HomeControllerItem extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                      height: 60.h,
-                      width: 110.w,
                       decoration: BoxDecoration(
-                          color: AppColors.chattopbarColor,
-                          border: Border.fromBorderSide(BorderSide(
-                              width: 1,
-                              color: AppColors.mainScreensTitlesBlueColor)),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(
-                              110.r,
-                            ),
-                            topRight: Radius.circular(110.r),
-                          )),
-                      child: Center(
-                          child: Text("Play",
-                              style: TextStyles.font20PrimaryColorSemiBold
-                                  .copyWith(fontSize: 16.sp)))),
-                  Gap(10.h),
-                  Container(
-                      height: 60.h,
-                      width: 110.w,
-                      decoration: BoxDecoration(
-                          border: Border.fromBorderSide(BorderSide(
-                              width: 1,
-                              color: AppColors.mainScreensTitlesBlueColor)),
-                          color: AppColors.chattopbarColor,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(110.r),
-                            bottomRight: Radius.circular(110.r),
-                          )),
-                      child: Center(
-                        child: Text("Return",
-                            style: TextStyles.font20PrimaryColorSemiBold
-                                .copyWith(fontSize: 16.sp)),
+                        shape: BoxShape.circle,
+                        color: AppColors.chattopbarColor,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(30.sp),
+                        child: Center(
+                            child: Text("Open",
+                                style: TextStyles.font20PrimaryColorSemiBold
+                                    .copyWith(fontSize: 16.sp))),
                       )),
                 ],
               ),
@@ -110,40 +86,4 @@ class HomeControllerItem extends StatelessWidget {
       ),
     );
   }
-}
-
-class MyArc extends StatelessWidget {
-  final double diameter;
-
-  const MyArc({super.key, this.diameter = 200});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: MyPainter(),
-      size: Size(diameter, diameter),
-    );
-  }
-}
-
-// This is the Painter class
-class MyPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = Colors.blue;
-    canvas.drawArc(
-      Rect.fromCenter(
-        center: Offset(size.height / 2, size.width / 2),
-        height: size.height,
-        width: size.width,
-      ),
-      math.pi,
-      math.pi,
-      false,
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }

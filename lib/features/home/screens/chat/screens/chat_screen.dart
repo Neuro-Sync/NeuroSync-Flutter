@@ -1,20 +1,73 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/resources/app_assets.dart';
 import 'package:neurosync/core/resources/app_size.dart';
 import 'package:neurosync/core/theming/app_colors.dart';
 import 'package:neurosync/core/theming/app_styles.dart';
-import '../../contacts/widgets/vertical_divider.dart';
-import '../widgets/chat_controller/chat_controller_item.dart';
-import '../widgets/chat_controller/chat_controller_lower_section.dart';
-import '../widgets/chat_controller/chat_controller_middle_section.dart';
-import '../widgets/chat_controller/chat_controller_upper_section.dart';
-import '../widgets/contacts_item.dart';
+import 'package:neurosync/features/home/screens/chat/chat_cubit/chat_cubit.dart';
+import '../widgets/chat_controller/chat_controller_item/chat_controller_item.dart';
+import '../widgets/chat_controller/chat_controller_lower_section/back_btn.dart';
+import '../widgets/chat_controller/chat_controller_lower_section/chat_controller_lower_section.dart';
+import '../widgets/chat_controller/chat_controller_middle_section/chat_controller_middle_section.dart';
+import '../widgets/chat_controller/chat_controller_middle_section/voice_call_btn.dart';
+import '../widgets/chat_controller/chat_controller_upper_section/chat_controller_upper_section.dart';
+import '../widgets/widgets/chat_item.dart';
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
+
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  Timer? _timer;
+  bool isReachedTop = false;
+  @override
+  void initState() {
+    super.initState();
+    _startTimer(context);
+    // _stopTimerAfterDuration(const Duration(seconds: 50));
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _startTimer(context) {
+    ChatCubit chatcubit = ChatCubit.get(context);
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+      if (chatcubit.componentWidget == null) {
+        // Setting Initial Point
+        chatcubit.change(componentWidget: const BackBtn());
+        log("Setting Initial Point");
+      } else {
+        if (chatcubit.compareWidgets(
+            chatcubit.componentWidget, const VoiceCallBtn())) {
+          // Resetting
+          chatcubit.change(componentWidget: null);
+
+          log("Resetting");
+        } else {
+          chatcubit.change(
+              componentWidget:
+                  chatcubit.componentWidget.neighbors(context)["top"]);
+        }
+      }
+    });
+  }
+
+  void _stopTimerAfterDuration(Duration duration) {
+    Future.delayed(duration, () {
+      _timer?.cancel();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +108,7 @@ class ChatScreen extends StatelessWidget {
                           children: [
                             Gap(20.w),
                             const CircleAvatar(
-                              backgroundImage: AssetImage(AppAssets.person_IC),
+                              child: Icon(Icons.person),
                             ),
                             Gap(20.w),
                             Column(

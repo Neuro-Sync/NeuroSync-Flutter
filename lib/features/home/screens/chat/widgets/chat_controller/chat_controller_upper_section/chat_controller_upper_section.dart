@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../core/theming/app_colors.dart';
-import '../../../../../../core/theming/app_styles.dart';
-import '../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/headset_icon_component.dart';
-import '../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/network_icon_component.dart';
+import '../../../../../../../core/theming/app_colors.dart';
+import '../../../../../../../core/theming/app_styles.dart';
+import '../../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/headset_icon_component.dart';
+import '../../../../../../preparing/screens/demo/widgets/entertainment_components/appbar/network_icon_component.dart';
 
 class ChatControllerUpperSection extends StatelessWidget {
   const ChatControllerUpperSection({super.key});

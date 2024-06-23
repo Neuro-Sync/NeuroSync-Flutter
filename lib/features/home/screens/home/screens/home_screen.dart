@@ -2,17 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/theming/app_colors.dart';
 import 'package:neurosync/core/theming/app_font_family.dart';
 import 'package:neurosync/features/home/screens/home/widgets/attention_item.dart';
-import 'package:neurosync/features/home/screens/wheelchair/widgets/blood_oxgyen_line_graph.dart';
 import '../widgets/blood_oxgy_level_item.dart';
 import '../widgets/heart_rate_item.dart';
 import '../widgets/home_controller/home_controller_item.dart';
-import '../widgets/home_controller/home_controller_middle_section.dart';
+import '../widgets/home_controller/home_controller_middle_section/home_controller_middle_section.dart';
 import '../widgets/home_controller/home_controller_upper_section.dart';
 import '../widgets/temp_item.dart';
 

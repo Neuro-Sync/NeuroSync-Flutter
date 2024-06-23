@@ -11,6 +11,7 @@ import 'package:neurosync/features/home/screens/map/screens/map_screen.dart';
 import 'package:neurosync/features/intro/screens/on_boarding_layout.dart';
 
 import 'features/auth/screens/registertion_layout.dart';
+import 'features/home/screens/chat/screens/chat_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key, this.remoteMessage}) : super(key: key);

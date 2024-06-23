@@ -73,7 +73,9 @@ class _MapControllerLowerSectionState extends State<MapControllerLowerSection> {
             )),
         Gap(49.h),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           style: ButtonStyle(
             maximumSize: MaterialStateProperty.all(
               Size(270.w, 66.h),

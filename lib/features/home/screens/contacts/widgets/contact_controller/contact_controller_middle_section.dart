@@ -25,8 +25,7 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                 ),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        164.0.r), // Replace 10.0 with your desired radius
+                    borderRadius: BorderRadius.circular(164.0.r),
                   ),
                 ),
                 backgroundColor:
@@ -67,8 +66,7 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                 ),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        164.0.r), // Replace 10.0 with your desired radius
+                    borderRadius: BorderRadius.circular(164.0.r),
                   ),
                 ),
                 backgroundColor:
@@ -113,8 +111,7 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           side: BorderSide(color: AppColors.darkgrey),
-                          borderRadius: BorderRadius.circular(
-                              164.0.r), // Replace 10.0 with your desired radius
+                          borderRadius: BorderRadius.circular(164.0.r),
                         ),
                       ),
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -158,8 +155,7 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                       ),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              164.0.r), // Replace 10.0 with your desired radius
+                          borderRadius: BorderRadius.circular(164.0.r),
                         ),
                       ),
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -168,24 +164,6 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        // Container(
-                        //     height: 32.h,
-                        //     width: 32.w,
-                        //     decoration: BoxDecoration(
-                        //         border: Border.all(
-                        //           color: AppColors.darkgrey,
-                        //         ),
-                        //         shape: BoxShape.circle,
-                        //         color: Colors.white),
-                        //     child: Padding(
-                        //       padding: EdgeInsets.all(3.sp),
-                        //       child: Image.asset(
-                        //         AppAssets.call_IC,
-                        //         width: 11.w,
-                        //         height: 11.h,
-                        //       ),
-                        //     )),
-
                         Container(
                           width: 32.w,
                           height: 32.h,
@@ -204,7 +182,6 @@ class ContactsControllerMiddleSection extends StatelessWidget {
                             ),
                           ),
                         ),
-
                         Text(
                           "Samy",
                           style: TextStyles.font20PrimaryColorSemiBold,

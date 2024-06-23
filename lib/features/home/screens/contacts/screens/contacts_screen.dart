@@ -5,10 +5,9 @@ import 'package:neurosync/core/theming/app_colors.dart';
 import '../widgets/contact_controller/contact_controller_lower_section.dart';
 import '../widgets/contact_controller/contact_controller_middle_section.dart';
 import '../widgets/contact_controller/contact_controller_upper_section.dart';
-import '../widgets/contact_controller/contact_controller_item.dart';
+import '../widgets/contact_controller/contacts_controller_item/contacts_controller_item.dart';
 import '../widgets/contacts_item.dart';
 
-//TODO:HANDLING FONTFAMILY PROBLEM
 class ContactsScreen extends StatefulWidget {
   const ContactsScreen({super.key});
 
@@ -36,7 +35,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 children: [
                   ContactControllerUpperSection(),
                   ContactsControllerMiddleSection(),
-                  ControllerItem(),
+                  ContactsControllerItem(),
                   ContactControllerLowerSection(),
                 ],
               ),

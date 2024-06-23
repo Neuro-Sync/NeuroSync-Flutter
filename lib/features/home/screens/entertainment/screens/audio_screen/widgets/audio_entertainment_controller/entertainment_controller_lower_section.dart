@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../../../../core/resources/app_assets.dart';

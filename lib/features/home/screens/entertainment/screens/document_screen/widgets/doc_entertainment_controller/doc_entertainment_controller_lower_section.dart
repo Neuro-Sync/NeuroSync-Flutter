@@ -20,7 +20,9 @@ class _DocEntertainmentControllerLowerSectionState
       children: [
         Gap(67.h),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           style: ButtonStyle(
             minimumSize: MaterialStateProperty.all(
               Size(301.w, 56.h),

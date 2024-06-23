@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neurosync/core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
+import '../../../../../../core/theming/app_styles.dart';
 
 class ChatItem extends StatelessWidget {
   const ChatItem({super.key, required this.index});

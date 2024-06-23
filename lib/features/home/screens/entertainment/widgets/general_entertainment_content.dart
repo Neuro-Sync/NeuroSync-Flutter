@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:neurosync/core/utils/nav_utils.dart';
 import 'package:neurosync/features/home/screens/entertainment/screens/audio_screen/screens/audio_entertainment_screen.dart';
+import 'package:neurosync/features/home/screens/entertainment/screens/video_screen/screens/videoes_entertainment_screen.dart';
 import 'package:neurosync/features/home/screens/entertainment/widgets/entertainment_item.dart';
 
 import '../../../../../core/components/app_text.dart';
@@ -14,7 +15,6 @@ import '../cubit/entertainment_cubit.dart';
 import '../screens/document_screen/screens/doc_entertainment_screen.dart';
 import '../screens/folder_screen/screens/folder_entertainment_screen.dart';
 import '../screens/image_screen/screens/image_entertainment_screen.dart';
-import '../screens/video_screen/screens/videoes_entertainment_screen.dart';
 
 class GeneralEntertainmentContent extends StatelessWidget {
   const GeneralEntertainmentContent({super.key});
@@ -23,7 +23,6 @@ class GeneralEntertainmentContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<EntertainmentCubit, EntertainmentState>(
       builder: (context, state) {
-        EntertainmentCubit entertainmentCubit = EntertainmentCubit.get(context);
         return Expanded(
           child: Container(
               color: AppColors.greycolor,
@@ -64,7 +63,7 @@ class GeneralEntertainmentContent extends StatelessWidget {
                       EntertainmentMediaItem(
                           onTap: () {
                             pushScreen(
-                                context, const AudioEntertainmentScreen());
+                                context, const VideoEntertainmentScreen());
                           },
                           path: AppAssets.videoes_IC,
                           title: "Videoes",

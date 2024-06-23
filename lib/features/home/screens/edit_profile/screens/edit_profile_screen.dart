@@ -4,10 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:neurosync/core/components/app_text.dart';
 import 'package:neurosync/core/theming/app_colors.dart';
 import 'package:neurosync/core/theming/app_font_family.dart';
-
 import '../widgets/profile_controller/profile_controller_item.dart';
 import '../widgets/profile_controller/profile_controller_lower_section.dart';
-import '../widgets/profile_controller/profile_controller_middle_section.dart';
 import '../widgets/profile_controller/profile_controller_upper_section.dart';
 
 class EditProfileScreen extends StatelessWidget {

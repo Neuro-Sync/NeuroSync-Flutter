@@ -32,8 +32,7 @@ class ProfileControllerMiddleSection extends StatelessWidget {
                       side: BorderSide(
                           color: AppColors.mainScreensTitlesBlueColor,
                           width: 1),
-                      borderRadius: BorderRadius.circular(
-                          164.0.r), // Replace 10.0 with your desired radius
+                      borderRadius: BorderRadius.circular(164.0.r),
                     ),
                   ),
                   backgroundColor: MaterialStateProperty.all<Color>(
@@ -65,8 +64,7 @@ class ProfileControllerMiddleSection extends StatelessWidget {
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          164.0.r), // Replace 10.0 with your desired radius
+                      borderRadius: BorderRadius.circular(164.0.r),
                     ),
                   ),
                   backgroundColor: MaterialStateProperty.all<Color>(
@@ -106,8 +104,7 @@ class ProfileControllerMiddleSection extends StatelessWidget {
                       side: BorderSide(
                           color: AppColors.mainScreensTitlesBlueColor,
                           width: 1),
-                      borderRadius: BorderRadius.circular(
-                          164.0.r), // Replace 10.0 with your desired radius
+                      borderRadius: BorderRadius.circular(164.0.r),
                     ),
                   ),
                   backgroundColor: MaterialStateProperty.all<Color>(
@@ -139,8 +136,7 @@ class ProfileControllerMiddleSection extends StatelessWidget {
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          164.0.r), // Replace 10.0 with your desired radius
+                      borderRadius: BorderRadius.circular(164.0.r),
                     ),
                   ),
                   backgroundColor: MaterialStateProperty.all<Color>(
@@ -176,4 +172,3 @@ class ProfileControllerMiddleSection extends StatelessWidget {
     );
   }
 }
-//

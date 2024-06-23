@@ -12,13 +12,10 @@ import '../../../../../../../core/components/app_text.dart';
 import '../../../../../../../core/theming/app_colors.dart';
 
 class AudioPlayer extends StatefulWidget {
-  /// Path from where to play recorded audio
   final String source;
   final int senderId;
   final Timestamp messagetime;
 
-  /// Callback when audio file should be removed
-  /// Setting this to null hides the delete button
   const AudioPlayer({
     Key? key,
     required this.source,

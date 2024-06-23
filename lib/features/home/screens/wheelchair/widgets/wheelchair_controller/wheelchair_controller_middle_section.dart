@@ -14,7 +14,7 @@ class WheelChairControllerMiddleSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Gap(25.h),
+        Gap(75.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -171,7 +171,7 @@ class WheelChairControllerMiddleSection extends StatelessWidget {
             thickness: 2,
           ),
         ),
-        Gap(25.h),
+        Gap(50.h),
       ],
     );
   }

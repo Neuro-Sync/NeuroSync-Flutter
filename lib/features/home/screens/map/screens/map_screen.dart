@@ -1,8 +1,6 @@
-// ignore_for_file: use_build_context_synchronously, library_private_types_in_public_api
-
+// ignore_for_file: library_private_types_in_public_api
 import 'dart:async';
 import 'dart:developer';
-// import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geocoding/geocoding.dart';
@@ -13,8 +11,6 @@ import '../widgets/map_controller/map_controller_item.dart';
 import '../widgets/map_controller/map_controller_lower_section.dart';
 import '../widgets/map_controller/map_controller_middle_section.dart';
 import '../widgets/map_controller/map_controller_upper_section.dart';
-
-final places = GoogleMapsPlaces(apiKey: '');
 
 class MapScreen extends StatefulWidget {
   const MapScreen({
@@ -35,35 +31,10 @@ class _MapScreenState extends State<MapScreen> {
 
   final TextEditingController searchController = TextEditingController();
   LatLng? selectedPosition;
-  Future<List<Prediction>> getPredictions(String query) async {
-    PlacesAutocompleteResponse response = await places.autocomplete(
-      query,
-    );
-    if (response.isOkay) {
-      return response.predictions;
-    } else {
-      return [];
-    }
-  }
 
   void onMapCreated(GoogleMapController controller) {
     mapController = controller;
     setState(() {});
-  }
-
-  void _changeLocation(double zoom, LatLng latLng) {
-    double newZoom = zoom > 15 ? zoom : 15;
-    _currentPosition = latLng;
-    setState(() {
-      mapController!.animateCamera(CameraUpdate.newCameraPosition(
-          CameraPosition(target: latLng, zoom: newZoom)));
-      markers.clear();
-      selectedPosition = latLng;
-      markers.add(Marker(
-        markerId: const MarkerId('1'),
-        position: latLng,
-      ));
-    });
   }
 
   @override
@@ -79,7 +50,6 @@ class _MapScreenState extends State<MapScreen> {
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      log("denied1");
       Navigator.pop(context);
       return Future.error('Location services are disabled.');
     }
@@ -87,14 +57,12 @@ class _MapScreenState extends State<MapScreen> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        log("denied1");
         Navigator.pop(context);
 
         return Future.error('Location permissions are denied');
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      log("denied1 for ever");
       Navigator.pop(context);
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
@@ -145,24 +113,26 @@ class _MapScreenState extends State<MapScreen> {
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  // Future<void> GetAddressFromLatLong(Position position) async {
-  //   List<Placemark> placemarks =
-  //       await placemarkFromCoordinates(position.latitude, position.longitude);
-  //   print(placemarks);
-  //   Placemark place = placemarks[0];
-
-  //   area = ' ${place.locality}, ${place.country}';
-  //   setState(() {
-  //     AddPostCubit.get(context).selectedAreaFromMap = area;
-  //   });
-  // }
   Future<void> getAddressFromLatLong(LatLng position) async {
     List<Placemark> placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
-    print(placemarks);
     Placemark place = placemarks[0];
-
     area = ' ${place.locality}, ${place.country}';
+  }
+
+  void _changeLocation(double zoom, LatLng latLng) {
+    double newZoom = zoom > 15 ? zoom : 15;
+    _currentPosition = latLng;
+    setState(() {
+      mapController!.animateCamera(CameraUpdate.newCameraPosition(
+          CameraPosition(target: latLng, zoom: newZoom)));
+      markers.clear();
+      selectedPosition = latLng;
+      markers.add(Marker(
+        markerId: const MarkerId('1'),
+        position: latLng,
+      ));
+    });
   }
 
   Widget _buildMap() {

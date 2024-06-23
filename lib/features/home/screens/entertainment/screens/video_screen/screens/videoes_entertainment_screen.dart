@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import '../../../../../../../core/components/app_text.dart';
@@ -61,10 +60,14 @@ class VideoEntertainmentScreen extends StatelessWidget {
                             (index) => SizedBox(
                                   width: 222.w,
                                   height: 178.h,
-                                  child: CachedNetworkImage(
-                                      fit: BoxFit.cover,
-                                      imageUrl:
-                                          "https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/6408f6e7b5811271dc883aa8_batman-min.png"),
+                                  child: Image.asset(
+                                      "assets/images/dummy_image.png",
+                                      fit: BoxFit.cover)
+                                  // CachedNetworkImage(
+                                  //     fit: BoxFit.cover,
+                                  //     imageUrl:
+                                  //         "https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/6408f6e7b5811271dc883aa8_batman-min.png")
+                                  ,
                                 )),
                       ),
                     ),

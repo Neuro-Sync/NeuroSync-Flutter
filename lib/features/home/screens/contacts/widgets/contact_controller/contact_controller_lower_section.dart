@@ -25,7 +25,7 @@ class _ContactControllerLowerSectionState
         Gap(67.h),
         // controller end
         FlutterToggleTab(
-          width: 32.w,
+          width: 28.w,
           borderRadius: 39.r,
           iconSize: 0,
           selectedTextStyle: TextStyles.font20PrimaryColorSemiBold,
@@ -43,10 +43,12 @@ class _ContactControllerLowerSectionState
         ),
         Gap(39.h),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           style: ButtonStyle(
             minimumSize: MaterialStateProperty.all(
-              Size(301.w, 56.h),
+              Size(350.w, 56.h),
             ),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(

@@ -24,7 +24,9 @@ class _ProfileControllerLowerSectionState
       children: [
         Gap(100.h),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           style: ButtonStyle(
             maximumSize: MaterialStateProperty.all(
               Size(270.w, 66.h),

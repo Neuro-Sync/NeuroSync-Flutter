@@ -12,60 +12,58 @@ class RegisterationCodeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppText(
-                "Enter the 6 digit code",
-                color: Colors.black,
-                fontSize: FontSizes.veryLarge,
-                fontFamily: FontConstants.interBoldFont,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppText(
+              "Enter the 6 digit code",
+              color: Colors.black,
+              fontSize: FontSizes.veryLarge,
+              fontFamily: FontConstants.interBoldFont,
+            ),
+            Gap(8.h),
+            AppText(
+              "The otp code will be sent to email   sa **** **** *@gmail.com",
+              color: AppColors.subtitleRegisterationColor,
+              fontSize: FontSizes.small,
+            ),
+            SizedBox(
+              width: 500.w,
+              height: 90.h,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: List.generate(
+                    6,
+                    (index) => Expanded(
+                          child: _textFieldOTP(context,
+                              first: index == 0 ? true : false,
+                              last: index == 5 ? true : false,
+                              controller: TextEditingController()),
+                        )),
               ),
-              Gap(8.h),
-              AppText(
-                "The otp code will be sent to email   sa **** **** *@gmail.com",
-                color: AppColors.subtitleRegisterationColor,
-                fontSize: FontSizes.small,
-              ),
-              SizedBox(
-                width: 500.w,
-                height: 90.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: List.generate(
-                      6,
-                      (index) => Expanded(
-                            child: _textFieldOTP(context,
-                                first: index == 0 ? true : false,
-                                last: index == 5 ? true : false,
-                                controller: TextEditingController()),
-                          )),
+            ),
+            Row(
+              children: [
+                AppText(
+                  "Resend code",
+                  color: AppColors.blackColor,
+                  fontSize: FontSizes.small,
+                  fontFamily: FontConstants.interMediumFont,
                 ),
-              ),
-              Row(
-                children: [
-                  AppText(
-                    "Resend code",
-                    color: AppColors.blackColor,
-                    fontSize: FontSizes.small,
-                    fontFamily: FontConstants.interMediumFont,
-                  ),
-                  Gap(8.h),
-                  AppText(
-                    "57sec",
-                    color: AppColors.blackColor,
-                    fontSize: FontSizes.small,
-                    fontFamily: FontConstants.interRegularFont,
-                  ),
-                ],
-              ),
-            ],
-          ),
+                Gap(8.h),
+                AppText(
+                  "57sec",
+                  color: AppColors.blackColor,
+                  fontSize: FontSizes.small,
+                  fontFamily: FontConstants.interRegularFont,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

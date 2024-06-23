@@ -44,8 +44,6 @@ class AppCubit extends Cubit<AppState> {
     "top": const SizedBox.shrink(),
   };
 
-  ///body//////
-
   Map<String, dynamic> filesNeighbors = {
     "bottom": ImagesFilesComponent(),
     "left": const PdfFilesComponent(),
@@ -93,8 +91,6 @@ class AppCubit extends Cubit<AppState> {
     "right": const SizedBox.shrink(),
     "top": FilesComponent(),
   };
-
-/////======/////////////
 
   bool compareWidgets(Widget widget1, Widget widget2) {
     if (widget1.runtimeType != widget2.runtimeType) {
