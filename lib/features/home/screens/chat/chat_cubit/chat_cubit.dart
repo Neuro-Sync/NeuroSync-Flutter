@@ -1,15 +1,21 @@
 import 'dart:developer';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neurosync/features/home/screens/chat/widgets/chat_controller/chat_controller_item/arrow_up.dart';
 import 'package:neurosync/features/home/screens/chat/widgets/chat_controller/chat_controller_middle_section/video_call_btn.dart';
 import 'package:neurosync/features/home/screens/chat/widgets/chat_controller/chat_controller_middle_section/voice_call_btn.dart';
+import 'package:neurosync/features/home/screens/chat/widgets/controlled_chat_components/first_message.dart';
+import 'package:neurosync/features/home/screens/chat/widgets/controlled_chat_components/second_message.dart';
 import '../widgets/chat_controller/chat_controller_item/arrow_down.dart';
 import '../widgets/chat_controller/chat_controller_item/play_btn.dart';
-import '../widgets/chat_controller/chat_controller_lower_section/back_btn.dart';
+import '../widgets/chat_controller/chat_controller_lower_section/chat_back_btn.dart';
 import '../widgets/chat_controller/chat_controller_lower_section/record_voice_btn.dart';
 import '../widgets/chat_controller/chat_controller_lower_section/send_location_btn.dart';
+import 'package:audioplayers/audioplayers.dart' as ap;
+
+import '../widgets/controlled_chat_components/fourth_message.dart';
+import '../widgets/controlled_chat_components/third_message.dart';
 
 part 'chat_state.dart';
 
@@ -18,7 +24,73 @@ class ChatCubit extends Cubit<ChatState> {
 
   static ChatCubit get(context) => BlocProvider.of(context);
 
-// ===========  chat Screen =====
+//  actions in Main Components BCI
+
+  void actionsInMainComponentsBCI(context) {
+    switch (selectedMainUiComponent) {
+      case ChatSecondMessage():
+        playFirstAudioMessage(context);
+        break;
+      case ChatFourthMessage():
+        playSecondAudioMessage(context);
+        break;
+
+      default:
+        print("Unknown component widget: $selectedMainUiComponent");
+    }
+  }
+
+  void playFirstAudioMessage(context) async {
+    await audioPlayer_1.play(AssetSource("audio/audio_sample.mp3"));
+  }
+
+  void playSecondAudioMessage(context) async {
+    await audioPlayer_2.play(AssetSource("audio/audio_sample.mp3"));
+  }
+
+//  actions in Main Components BCI
+
+  final audioPlayer_1 = ap.AudioPlayer();
+  final audioPlayer_2 = ap.AudioPlayer();
+
+  Future<void> pauseFirstMsg() => audioPlayer_1.pause();
+  Future<void> stopFirstMsg() => audioPlayer_1.stop();
+
+  Future<void> playSecondMsgAudio() async {
+    await audioPlayer_2.play(AssetSource("audio/audio_sample.mp3"));
+  }
+
+  Future<void> pauseSecondMsg() => audioPlayer_2.pause();
+  Future<void> stopSecondMsg() => audioPlayer_2.stop();
+
+// ===========  Entertainment Main Components BCI =====
+
+  //  Initial Values -  Before the first navigation
+  dynamic selectedMainUiComponent = const ChatFirstMessage();
+
+  Map<String, dynamic> firstMsgNeighbors = {
+    "bottom": const ChatSecondMessage(),
+    "top": const ChatFourthMessage(),
+  };
+
+  Map<String, dynamic> secondMsgNeighbors = {
+    "bottom": const ChatThirdMessage(),
+    "top": const ChatFirstMessage(),
+  };
+
+  Map<String, dynamic> thirdMsgNeighbors = {
+    "bottom": const ChatFourthMessage(),
+    "top": const ChatSecondMessage(),
+  };
+
+  Map<String, dynamic> fourthMsgNeighbors = {
+    "bottom": const ChatFirstMessage(),
+    "top": const ChatThirdMessage(),
+  };
+
+// ===========  Entertainment Main Components BCI =====
+
+// ===========  chat Controller BCI =====
 
   Map<String, dynamic> backBtnNeighbors = {
     "bottom": const SizedBox.shrink(),
@@ -27,7 +99,7 @@ class ChatCubit extends Cubit<ChatState> {
     "top": const SendLocationBtn(),
   };
   Map<String, dynamic> sendLocationBtnNeighbors = {
-    "bottom": const BackBtn(),
+    "bottom": const ChatBackBtn(),
     "left": const SizedBox.shrink(),
     "right": const SizedBox.shrink(),
     "top": const RecordVoiceBtn(),
@@ -43,7 +115,7 @@ class ChatCubit extends Cubit<ChatState> {
     "bottom": const RecordVoiceBtn(),
     "left": const SizedBox.shrink(),
     "right": const SizedBox.shrink(),
-    "top": const PlayBtn(),
+    "top": const ChatPlayBtn(),
   };
 
   Map<String, dynamic> chatControllerArrowUpBtnNeighbors = {
@@ -53,7 +125,7 @@ class ChatCubit extends Cubit<ChatState> {
     "top": const VideoCallBtn(),
   };
 
-  Map<String, dynamic> VideoCallBtnNeighbors = {
+  Map<String, dynamic> videoCallBtnNeighbors = {
     "bottom": const ChatControllerArrowUp(),
     //that correct
     // "left": const VoiceCallBtn(),
@@ -63,12 +135,12 @@ class ChatCubit extends Cubit<ChatState> {
     "top": const VoiceCallBtn(),
   };
 
-  Map<String, dynamic> VoiceCallBtnNeighbors = {
+  Map<String, dynamic> voiceCallBtnNeighbors = {
     "bottom": const ChatControllerArrowUp(),
     // "left": const SizedBox.shrink(),
     // "right": const VideoCallBtn(),
     // "top": const SizedBox.shrink(),
-    "top": VideoCallBtn()
+    "top": const VideoCallBtn()
   };
   Map<String, dynamic> playBtnNeighbors = {
     "bottom": const ChatControllerArrowDown(),
@@ -76,72 +148,57 @@ class ChatCubit extends Cubit<ChatState> {
     "right": const SizedBox.shrink(),
     "top": const ChatControllerArrowUp(),
   };
+  // ===========  Chat Controller BCI =====
+
+  // ===========  Chat Utils Methods =====
 
   bool compareWidgets(Widget widget1, Widget widget2) {
     if (widget1.runtimeType != widget2.runtimeType) {
-      emit(state.copyWith(stepsCountIncontrller: stepsCountIncontrller));
-
       return false;
     } else {
-      emit(state.copyWith(stepsCountIncontrller: stepsCountIncontrller));
-
       return true;
     }
   }
 
-  dynamic componentWidget;
-
-  void changeControllerAccesss(bool? isClicked) {
-    if (isClicked == true) {
-      stepsCountIncontrller = 0;
-      emit(state.copyWith(isClicked: isClicked));
-    } else {
-      stepsCountIncontrller = 1;
-
-      emit(state.copyWith(isClicked: isClicked));
-    }
-  }
-
-  int stepsCountIncontrller = -1;
-
-  void changeCurrentstep({int? value}) {
-    if (value == null) {
-      log("%%%%");
-      stepsCountIncontrller = stepsCountIncontrller + 1;
-      emit(state.copyWith(changestate: Changestate.success));
-    } else {
-      log("#######");
-
-      stepsCountIncontrller = value;
-      emit(state.copyWith(changestate: Changestate.success));
-    }
-  }
-
-  void change({dynamic componentWidget}) {
-    log("inside");
-    this.componentWidget = componentWidget;
-    emit(state.copyWith(changestate: Changestate.success));
-  }
-
-  int currentIndex = 0;
-  void changeCurrentregisterScreen(currentScreen) {
-    currentIndex = currentScreen;
+  dynamic componentWidget = const ChatBackBtn();
+  void changeCurrentChatControllerComponent(context,
+      {dynamic selectedControllercomponent, int? action}) {
+    componentWidget = selectedControllercomponent;
+    // if (action == 1) {
+    navigation(context);
+    // }
     emit(state.copyWith(
-        changeCurrentRegisterScreen: ChangeCurrentRegisterScreen.success));
+        changeCurrentChatControllerComponent:
+            ChangeCurrentChatControllerComponent.success));
   }
 
-  void navigation(context, dynamic current, dynamic direction) {
-    log("${current.neighbors}neighbors");
-    if (direction == current.neighbors(context)["left"]) {
-      componentWidget = current.neighbors(context)["left"];
-    } else if (direction == current.neighbors(context)["top"]) {
-      componentWidget = current.neighbors(context)["top"];
-    } else if (direction == current.neighbors(context)["bottom"]) {
-      componentWidget = current.neighbors(context)["bottom"];
-    } else if (direction == current.neighbors(context)["right"]) {
-      componentWidget = current.neighbors(context)["right"];
+  void navigation(
+    context,
+  ) {
+    switch (componentWidget) {
+      case ChatControllerArrowDown():
+        log("It is Arrow Down =====================");
+        selectedMainUiComponent =
+            selectedMainUiComponent.neighbors(context)["bottom"];
+
+        audioPlayer_1.stop();
+        audioPlayer_2.stop();
+        break;
+      case ChatControllerArrowUp():
+        selectedMainUiComponent =
+            selectedMainUiComponent.neighbors(context)["top"];
+        audioPlayer_1.stop();
+        audioPlayer_2.stop();
+        break;
+
+      case ChatPlayBtn():
+        actionsInMainComponentsBCI(context);
+        break;
+      default:
+        print("Unknown component widget: $componentWidget");
     }
-
-    emit(state.copyWith(changeCurrentChild: ChangeCurrentChild.success));
+    emit(state.copyWith(
+        changeChatNavigationState: ChangeChatNavigationState.success));
   }
+  // ===========  Chat Utils Methods =====
 }

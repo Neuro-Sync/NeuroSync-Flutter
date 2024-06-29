@@ -25,11 +25,10 @@ class ChildBuildBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AppCubit, AppState>(
+    return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         return Container(child: childContent);
       },
-      listener: (context, state) {},
     );
   }
 }

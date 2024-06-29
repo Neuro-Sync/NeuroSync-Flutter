@@ -7,10 +7,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
-import '../widgets/map_controller/map_controller_item.dart';
 import '../widgets/map_controller/map_controller_lower_section.dart';
-import '../widgets/map_controller/map_controller_middle_section.dart';
 import '../widgets/map_controller/map_controller_upper_section.dart';
+import '../widgets/map_controller_middle_section/map_controller_middle_section.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({
@@ -154,7 +153,7 @@ class _MapScreenState extends State<MapScreen> {
               children: [
                 MapControllerUpperSection(),
                 MapControllerMiddleSection(),
-                MapControllerItem(),
+                // MapControllerItem(),
                 MapControllerLowerSection(),
               ],
             ),

@@ -4,8 +4,9 @@ import 'package:neurosync/core/theming/app_colors.dart';
 import '../../../../../../core/theming/app_styles.dart';
 
 class ChatItem extends StatelessWidget {
-  const ChatItem({super.key, required this.index});
+  const ChatItem({super.key, required this.index, required this.content});
   final int index;
+  final Widget content;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,17 +25,9 @@ class ChatItem extends StatelessWidget {
               bottomRight: Radius.circular(15.0.r),
             ),
           ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(10.0.sp),
-              child: Text(
-                "OMG 😲 do you remember what you did last night at the work?",
-                style: TextStyles.font20PrimaryColorSemiBold.copyWith(
-                    color: index % 2 == 0
-                        ? Colors.white
-                        : AppColors.mainScreensTitlesBlueColor),
-              ),
-            ),
+          child: Padding(
+            padding: EdgeInsets.only(left: index == 1 || index == 3 ? 30.w : 0),
+            child: Align(alignment: Alignment.centerLeft, child: content),
           )),
     );
   }

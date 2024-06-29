@@ -9,7 +9,7 @@ import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_font_family.dart';
 import '../../../core/theming/app_styles.dart';
 import '../../home/screens/home/screens/home_screen.dart';
-import '../../preparing/screens/demo/screens/entertainment_screen.dart';
+import '../../preparing/screens/demo/screens/demo_entertainment_screen.dart';
 
 class RegisterationCongratulationsScreen extends StatelessWidget {
   const RegisterationCongratulationsScreen({super.key});

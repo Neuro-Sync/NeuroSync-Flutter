@@ -54,5 +54,5 @@ class AppAssets {
   static const String brain_ic = "${basePathIcons}brain_ic.svg";
 
   ///   ==== Audio sample ====
-  static const String audio_sample = "${basePathAudio}audio_sample.mp3";
+  // static const String audio_sample = "${basePathAudio}audio_sample.mp3";
 }

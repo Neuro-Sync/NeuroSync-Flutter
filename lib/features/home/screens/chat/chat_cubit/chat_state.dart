@@ -2,46 +2,41 @@
 
 part of 'chat_cubit.dart';
 
-enum ChangeCurrentRegisterScreen {
+enum ChangeChatNavigationState {
   initial,
   success,
 }
 
-enum ChangeCurrentChild {
-  initial,
-  success,
-}
-
-enum Changestate {
+enum ChangeCurrentChatControllerComponent {
   initial,
   success,
 }
 
 class ChatState {
-  final ChangeCurrentRegisterScreen changeCurrentRegisterScreen;
-  final ChangeCurrentChild changeCurrentChild;
-  final Changestate changestate;
+  final ChangeChatNavigationState changeChatNavigationState;
+  final ChangeCurrentChatControllerComponent
+      changeCurrentChatControllerComponent;
   bool? isClicked;
 
   ChatState({
-    this.changeCurrentRegisterScreen = ChangeCurrentRegisterScreen.initial,
-    this.changeCurrentChild = ChangeCurrentChild.initial,
-    this.changestate = Changestate.initial,
+    this.changeChatNavigationState = ChangeChatNavigationState.initial,
+    this.changeCurrentChatControllerComponent =
+        ChangeCurrentChatControllerComponent.initial,
     this.isClicked,
   });
 
   ChatState copyWith({
-    ChangeCurrentRegisterScreen? changeCurrentRegisterScreen,
-    ChangeCurrentChild? changeCurrentChild,
-    Changestate? changestate,
+    ChangeChatNavigationState? changeChatNavigationState,
+    ChangeCurrentChatControllerComponent? changeCurrentChatControllerComponent,
     bool? isClicked,
     int? stepsCountIncontrller = -1,
   }) {
     return ChatState(
-      changeCurrentChild: changeCurrentChild ?? this.changeCurrentChild,
-      changeCurrentRegisterScreen:
-          changeCurrentRegisterScreen ?? this.changeCurrentRegisterScreen,
-      changestate: changestate ?? this.changestate,
+      changeChatNavigationState:
+          changeChatNavigationState ?? this.changeChatNavigationState,
+      changeCurrentChatControllerComponent:
+          changeCurrentChatControllerComponent ??
+              this.changeCurrentChatControllerComponent,
       isClicked: isClicked ?? this.isClicked ?? false,
     );
   }

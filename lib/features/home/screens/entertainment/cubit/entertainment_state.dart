@@ -1,18 +1,43 @@
 part of 'entertainment_cubit.dart';
-// ignore_for_file: camel_case_types
+
+enum ChangeEntertainmentNavigationState {
+  initial,
+  success,
+}
+
+enum ChangeCurrentEntertainmentControllerComponent {
+  initial,
+  success,
+}
 
 class EntertainmentState {
-  final String? exception;
+  final ChangeEntertainmentNavigationState changeEntertainmentNavigationState;
+  final ChangeCurrentEntertainmentControllerComponent
+      changeCurrentEntertainmentControllerComponent;
+  bool? isClicked;
 
   EntertainmentState({
-    this.exception,
+    this.changeEntertainmentNavigationState =
+        ChangeEntertainmentNavigationState.initial,
+    this.changeCurrentEntertainmentControllerComponent =
+        ChangeCurrentEntertainmentControllerComponent.initial,
+    this.isClicked,
   });
 
   EntertainmentState copyWith({
-    String? exception,
+    ChangeEntertainmentNavigationState? changeEntertainmentNavigationState,
+    ChangeCurrentEntertainmentControllerComponent?
+        changeCurrentEntertainmentControllerComponent,
+    bool? isClicked,
+    int? stepsCountIncontrller = -1,
   }) {
     return EntertainmentState(
-      exception: exception ?? this.exception,
+      changeEntertainmentNavigationState: changeEntertainmentNavigationState ??
+          this.changeEntertainmentNavigationState,
+      changeCurrentEntertainmentControllerComponent:
+          changeCurrentEntertainmentControllerComponent ??
+              this.changeCurrentEntertainmentControllerComponent,
+      isClicked: isClicked ?? this.isClicked ?? false,
     );
   }
 }

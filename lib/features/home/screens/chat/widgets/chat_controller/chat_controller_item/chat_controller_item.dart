@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-import 'package:neurosync/core/theming/app_styles.dart';
-
 import 'dart:math' as math;
-
-import '../../../../../../../core/resources/app_assets.dart';
 import '../../../../../../../core/theming/app_colors.dart';
 import 'arrow_down.dart';
 import 'arrow_up.dart';
@@ -28,7 +23,7 @@ class ChatControllerItem extends StatelessWidget {
         children: [
           const ChatControllerArrowUp(),
           Gap(10.h),
-          const PlayBtn(),
+          const ChatPlayBtn(),
           Gap(10.h),
           const ChatControllerArrowDown(),
         ],

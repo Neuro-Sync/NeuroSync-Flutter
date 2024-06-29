@@ -11,7 +11,7 @@ import '../../../chat_cubit/chat_cubit.dart';
 class VoiceCallBtn extends StatelessWidget {
   const VoiceCallBtn({super.key});
   Map<String, dynamic> neighbors(BuildContext context) =>
-      ChatCubit.get(context).VoiceCallBtnNeighbors;
+      ChatCubit.get(context).voiceCallBtnNeighbors;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChatCubit, ChatState>(
@@ -28,10 +28,10 @@ class VoiceCallBtn extends StatelessWidget {
                       : AppColors.primarycolor,
                   width: 2.sp)),
           child: ChildBuildBlock(
-            bottom: chatCubit.VoiceCallBtnNeighbors["bottom"],
-            left: chatCubit.VoiceCallBtnNeighbors["left"],
-            right: chatCubit.VoiceCallBtnNeighbors["right"],
-            top: chatCubit.VoiceCallBtnNeighbors["top"],
+            bottom: chatCubit.voiceCallBtnNeighbors["bottom"],
+            left: chatCubit.voiceCallBtnNeighbors["left"],
+            right: chatCubit.voiceCallBtnNeighbors["right"],
+            top: chatCubit.voiceCallBtnNeighbors["top"],
             childContent: OutlinedButton(
                 onPressed: () {},
                 style: ButtonStyle(

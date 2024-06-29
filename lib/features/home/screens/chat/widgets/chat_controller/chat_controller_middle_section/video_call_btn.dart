@@ -11,7 +11,7 @@ import '../../../chat_cubit/chat_cubit.dart';
 class VideoCallBtn extends StatelessWidget {
   const VideoCallBtn({super.key});
   Map<String, dynamic> neighbors(BuildContext context) =>
-      ChatCubit.get(context).VideoCallBtnNeighbors;
+      ChatCubit.get(context).videoCallBtnNeighbors;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChatCubit, ChatState>(
@@ -28,10 +28,10 @@ class VideoCallBtn extends StatelessWidget {
                       : AppColors.primarycolor,
                   width: 2.sp)),
           child: ChildBuildBlock(
-            bottom: chatCubit.VideoCallBtnNeighbors["bottom"],
-            left: chatCubit.VideoCallBtnNeighbors["left"],
-            right: chatCubit.VideoCallBtnNeighbors["right"],
-            top: chatCubit.VideoCallBtnNeighbors["top"],
+            bottom: chatCubit.videoCallBtnNeighbors["bottom"],
+            left: chatCubit.videoCallBtnNeighbors["left"],
+            right: chatCubit.videoCallBtnNeighbors["right"],
+            top: chatCubit.videoCallBtnNeighbors["top"],
             childContent: OutlinedButton(
                 onPressed: () {},
                 style: ButtonStyle(

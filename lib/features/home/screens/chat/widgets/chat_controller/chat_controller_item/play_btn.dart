@@ -7,8 +7,8 @@ import '../../../../../../../core/theming/app_styles.dart';
 import '../../../../../../preparing/widgets/child_component.dart';
 import '../../../chat_cubit/chat_cubit.dart';
 
-class PlayBtn extends StatelessWidget {
-  const PlayBtn({super.key});
+class ChatPlayBtn extends StatelessWidget {
+  const ChatPlayBtn({super.key});
   Map<String, dynamic> neighbors(BuildContext context) =>
       ChatCubit.get(context).playBtnNeighbors;
   @override
@@ -21,7 +21,7 @@ class PlayBtn extends StatelessWidget {
               border: Border.all(
                   color: chatCubit.componentWidget != null
                       ? chatCubit.compareWidgets(
-                              chatCubit.componentWidget, const PlayBtn())
+                              chatCubit.componentWidget, const ChatPlayBtn())
                           ? Colors.amber
                           : AppColors.primarycolor
                       : AppColors.primarycolor,
